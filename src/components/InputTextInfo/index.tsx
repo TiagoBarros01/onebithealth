@@ -2,30 +2,34 @@ import React, { useState } from 'react';
 import { Text, TextInput, View } from 'react-native';
 import { InputStyles } from './style';
 
-interface Props {
-  TextValue: string;
-  PlaceholderValue: string;
-  maxLengthValue: number;
-}
-
-export function InputTextInfo({
-  TextValue,
-  PlaceholderValue,
-  maxLengthValue,
-}: Props) {
-  const [InputValue, setInputValue] = useState<string>();
+export function InputTextInfo() {
+  const [height, setHeight] = useState<string>();
+  const [weight, setWeight] = useState<string>();
 
   return (
-    <View style={InputStyles.Container}>
-      <Text style={InputStyles.Text}>{TextValue}</Text>
-      <TextInput
-        style={InputStyles.Input}
-        placeholder={PlaceholderValue}
-        keyboardType="numeric"
-        value={InputValue}
-        onChangeText={setInputValue}
-        maxLength={maxLengthValue}
-      />
-    </View>
+    <>
+      <View style={InputStyles.Container}>
+        <Text style={InputStyles.Text}>Height</Text>
+        <TextInput
+          style={InputStyles.Input}
+          placeholder="Ex. 1.75"
+          keyboardType="numeric"
+          value={height}
+          onChangeText={setHeight}
+          maxLength={3}
+        />
+      </View>
+      <View style={InputStyles.Container}>
+        <Text style={InputStyles.Text}>Weight</Text>
+        <TextInput
+          style={InputStyles.Input}
+          placeholder="Ex. 74.70"
+          keyboardType="numeric"
+          value={weight}
+          onChangeText={setWeight}
+          maxLength={6}
+        />
+      </View>
+    </>
   );
 }
