@@ -27,5 +27,8 @@ export const HomeStyles = StyleSheet.create({
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     padding: 30,
+  },
+  Button: {
+    width: 10
   }
 })
