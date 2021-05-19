@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const HomeStyles = StyleSheet.create({
   Area: {
     flex: 1,
     backgroundColor: '#eee',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   Title: {
     height: 150,
@@ -15,7 +15,7 @@ export const HomeStyles = StyleSheet.create({
   Text: {
     color: 'red',
     fontSize: 25,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   Main: {
     flex: 1,
@@ -37,11 +37,10 @@ export const HomeStyles = StyleSheet.create({
 
     alignItems: 'center',
     justifyContent: 'center',
-
   },
   TextBtn: {
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 14,
-  }
-})
+  },
+});
