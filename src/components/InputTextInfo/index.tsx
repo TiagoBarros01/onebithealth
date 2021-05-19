@@ -11,7 +11,7 @@ export function InputTextInfo({TextValue, PlaceholderValue}: Props) {
   return (
     <View style={InputStyles.Container}>
       <Text style={InputStyles.Text}>{TextValue}</Text>
-      <TextInput placeholder={PlaceholderValue} keyboardType="numeric" />
+      <TextInput style={InputStyles.Input} placeholder={PlaceholderValue} keyboardType="numeric" />
     </View>
   );
 }
