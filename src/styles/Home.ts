@@ -29,6 +29,19 @@ export const HomeStyles = StyleSheet.create({
     padding: 30,
   },
   Button: {
-    width: 10
+    backgroundColor: 'red',
+
+    width: '70%',
+    height: 45,
+    borderRadius: 15,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  },
+  TextBtn: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 14,
   }
 })

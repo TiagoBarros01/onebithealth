@@ -12,8 +12,8 @@ export default function Home() {
       <View style={HomeStyles.Main}>
         <InputTextInfo PlaceholderValue="Ex. 1.75" TextValue="Height" />
         <InputTextInfo PlaceholderValue="Ex. 70.55" TextValue="Weight" />
-        <TouchableOpacity>
-          <Text>Calculate</Text>
+        <TouchableOpacity style={HomeStyles.Button} activeOpacity={.6} >
+          <Text style={HomeStyles.TextBtn} >Calculate</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
