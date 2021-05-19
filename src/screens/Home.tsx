@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <SafeAreaView style={HomeStyles.Area}>
       <View style={HomeStyles.Title}>
-        <Text>ONE BIT HEALTH</Text>
+        <Text style={HomeStyles.Text}>ONEBITHEALTH</Text>
       </View>
       <View style={HomeStyles.Main}>
         <InputTextInfo PlaceholderValue="Ex. 1.75" TextValue="Height" />

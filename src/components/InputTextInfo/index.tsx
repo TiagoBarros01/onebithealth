@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, TextInput, View } from 'react-native';
+import { InputStyles } from './style';
 
 interface Props {
   TextValue: string;
@@ -8,8 +9,8 @@ interface Props {
 
 export function InputTextInfo({TextValue, PlaceholderValue}: Props) {
   return (
-    <View>
-      <Text>{TextValue}</Text>
+    <View style={InputStyles.Container}>
+      <Text style={InputStyles.Text}>{TextValue}</Text>
       <TextInput placeholder={PlaceholderValue} keyboardType="numeric" />
     </View>
   );

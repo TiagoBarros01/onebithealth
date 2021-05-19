@@ -10,7 +10,12 @@ export const HomeStyles = StyleSheet.create({
   Title: {
     height: 150,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+  },
+  Text: {
+    color: 'red',
+    fontSize: 20,
+    fontWeight: 'bold'
   },
   Main: {
     flex: 1,
@@ -21,5 +26,6 @@ export const HomeStyles = StyleSheet.create({
 
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
+    padding: 30,
   }
 })
