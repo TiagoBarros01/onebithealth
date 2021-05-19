@@ -14,7 +14,7 @@ export const HomeStyles = StyleSheet.create({
   },
   Text: {
     color: 'red',
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold'
   },
   Main: {
