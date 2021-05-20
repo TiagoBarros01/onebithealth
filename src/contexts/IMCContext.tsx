@@ -18,13 +18,13 @@ function IMCContextProvider({ children }: Props) {
   const [IMC, setIMC] = useState(0);
 
   function handleIMC() {
-    setIMC(Math.round(weight / (height * height)));
+    if (weight && height !== 0) {
+      setIMC((weight / (height * height)).toFixed(2));
+    }
   }
 
   return (
-    <IMCContext.Provider
-      value={{ handleIMC, setWeight, setHeight, IMC }}
-    >
+    <IMCContext.Provider value={{ handleIMC, setWeight, setHeight, IMC }}>
       {children}
     </IMCContext.Provider>
   );

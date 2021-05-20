@@ -10,14 +10,13 @@ export function InputTextInfo() {
   return (
     <>
       <View style={InputStyles.Container}>
-        <Text></Text>
         <Text style={InputStyles.Text}>Height</Text>
         <TextInput
           style={InputStyles.Input}
           placeholder="Ex. 1.75"
-          keyboardType="numeric"
+          keyboardType="numbers-and-punctuation"
           onChangeText={setHeight}
-          maxLength={3}
+          maxLength={4}
         />
       </View>
       <View style={InputStyles.Container}>
@@ -25,7 +24,7 @@ export function InputTextInfo() {
         <TextInput
           style={InputStyles.Input}
           placeholder="Ex. 74.70"
-          keyboardType="numeric"
+          keyboardType="numbers-and-punctuation"
           onChangeText={setWeight}
           maxLength={6}
         />
