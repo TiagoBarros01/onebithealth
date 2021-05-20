@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { Alert, Keyboard, Vibration } from 'react-native';
+import { Alert, Keyboard, Share, Vibration } from 'react-native';
 
 interface Props {
   children: React.ReactNode;
@@ -9,6 +9,7 @@ interface IMCContextData {
   handleIMCAgain: () => void;
   setWeight: () => number;
   setHeight: () => number;
+  onShare: () => void;
   weight: number;
   height: number;
   IMC: number;
@@ -49,11 +50,18 @@ function IMCContextProvider({ children }: Props) {
     setIMC(0);
   }
 
+  async function onShare() {
+    const res = await Share.share({
+      message: `Today my IMC is: ${IMC}`
+    })
+  }
+
   return (
     <IMCContext.Provider
       value={{
         handleIMC,
         handleIMCAgain,
+        onShare,
         setWeight,
         setHeight,
         weight,
@@ -61,6 +69,7 @@ function IMCContextProvider({ children }: Props) {
         IMC,
         TexBtn,
         btnState,
+        
       }}
     >
       {children}

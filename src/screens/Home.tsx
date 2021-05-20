@@ -12,7 +12,7 @@ import { IMCContext } from '../contexts/IMCContext';
 import { HomeStyles } from '../styles/screens/Home';
 
 export default function Home() {
-  const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState } =
+  const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare } =
     useContext(IMCContext);
 
   return (
@@ -43,7 +43,7 @@ export default function Home() {
                 <Text style={HomeStyles.ResultIMCValue}>
                   {IMC.toString().replace('.', ',')}
                 </Text>
-                <TouchableOpacity style={HomeStyles.ShareBtn} activeOpacity={.6} >
+                <TouchableOpacity onPress={() => onShare()} style={HomeStyles.ShareBtn} activeOpacity={.6} >
                   <Text style={HomeStyles.TextShareBtn}>Share 🤩</Text>
                 </TouchableOpacity>
               </View>

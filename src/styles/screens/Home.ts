@@ -74,12 +74,12 @@ export const HomeStyles = StyleSheet.create({
   },
   ShareBtn: {
     width: 110,
-    height: 55,
+    height: 40,
 
     justifyContent: 'center',
     alignItems: 'center',
 
-    borderRadius: 15,
+    borderRadius: 20,
 
     backgroundColor: Theme.colors.red
   },
