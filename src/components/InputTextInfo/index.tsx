@@ -4,7 +4,7 @@ import { IMCContext } from '../../contexts/IMCContext';
 import { InputStyles } from './style';
 
 export function InputTextInfo() {
-  const { setHeight, setWeight } =
+  const { setHeight, setWeight, height, weight } =
     useContext(IMCContext);
 
   return (
@@ -14,8 +14,9 @@ export function InputTextInfo() {
         <TextInput
           style={InputStyles.Input}
           placeholder="Ex. 1.75"
-          keyboardType="numbers-and-punctuation"
+          keyboardType="numeric"
           onChangeText={setHeight}
+          value={height === 0 ? '' : height.toString().replace(',','.')}
           maxLength={4}
         />
       </View>
@@ -24,8 +25,9 @@ export function InputTextInfo() {
         <TextInput
           style={InputStyles.Input}
           placeholder="Ex. 74.70"
-          keyboardType="numbers-and-punctuation"
+          keyboardType="numeric"
           onChangeText={setWeight}
+          value={weight === 0 ? '' : weight.toString().replace(',','.')}
           maxLength={6}
         />
       </View>
