@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import {
   Keyboard,
   SafeAreaView,
@@ -32,18 +32,22 @@ export default function Home() {
           >
             <Text style={HomeStyles.TextBtn}>{TexBtn}</Text>
           </TouchableOpacity>
-          <View style={HomeStyles.ResultIMCContainer}>
-            <Text style={HomeStyles.TextResultIMC}>
-              {IMC === 0 ? (
-                <Text style={HomeStyles.TextWithoutResult}>Fill the height and weight fields</Text>
-              ) : (
-                <>
-                  <Text>Your IMC is:</Text>
-                  {'\n'}
-                  <Text style={HomeStyles.ResultIMCValue}>{IMC.toString().replace('.', ',')}</Text>
-                </>
-              )}
-            </Text>
+          <View style={HomeStyles.IMCContainer}>
+            {IMC === 0 ? (
+              <Text style={HomeStyles.TextWithoutResult}>
+                Fill the height and weight fields
+              </Text>
+            ) : (
+              <View style={HomeStyles.ResultIMCContainer}>
+                <Text style={HomeStyles.TextResultIMC} >Your IMC is:</Text>
+                <Text style={HomeStyles.ResultIMCValue}>
+                  {IMC.toString().replace('.', ',')}
+                </Text>
+                <TouchableOpacity style={HomeStyles.ShareBtn} activeOpacity={.6} >
+                  <Text style={HomeStyles.TextShareBtn}>Share 🤩</Text>
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
         </View>
       </SafeAreaView>

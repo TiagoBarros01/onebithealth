@@ -44,23 +44,47 @@ export const HomeStyles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 14,
   },
-  ResultIMCContainer: {
+  IMCContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   TextWithoutResult: {
     fontSize: 20,
+    color: Theme.colors.red
+  },
+  ResultIMCContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   TextResultIMC: {
+    marginTop: 10,
     fontSize: 24,
-    color: Theme.colors.red,
     textAlign: 'center',
-
   },
   ResultIMCValue: {
     fontWeight: 'bold',
     fontSize: 36,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: Theme.colors.red,
+
+    marginTop: 10,
+    marginBottom: 15
+  },
+  ShareBtn: {
+    width: 110,
+    height: 55,
+
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    borderRadius: 15,
+
+    backgroundColor: Theme.colors.red
+  },
+  TextShareBtn: {
+    color: Theme.colors.white,
+    fontSize: 16,
   }
 });
