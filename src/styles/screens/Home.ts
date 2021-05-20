@@ -46,20 +46,21 @@ export const HomeStyles = StyleSheet.create({
   },
   IMCContainer: {
     flex: 1,
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
   TextWithoutResult: {
+    marginTop: 40,
     fontSize: 20,
     color: Theme.colors.red
   },
   ResultIMCContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   TextResultIMC: {
-    marginTop: 10,
     fontSize: 24,
     textAlign: 'center',
   },
@@ -70,7 +71,7 @@ export const HomeStyles = StyleSheet.create({
     color: Theme.colors.red,
 
     marginTop: 10,
-    marginBottom: 15
+    marginBottom: 30
   },
   ShareBtn: {
     width: 110,

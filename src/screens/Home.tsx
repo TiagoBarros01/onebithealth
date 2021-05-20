@@ -22,22 +22,24 @@ export default function Home() {
           <Text style={HomeStyles.Text}>ONEBITHEALTH 🎯</Text>
         </View>
         <View style={HomeStyles.Main}>
-          <InputTextInfo />
-          <TouchableOpacity
-            onPress={
-              btnState === true ? () => handleIMC() : () => handleIMCAgain()
-            }
-            style={HomeStyles.Button}
-            activeOpacity={0.6}
-          >
-            <Text style={HomeStyles.TextBtn}>{TexBtn}</Text>
-          </TouchableOpacity>
-          <View style={HomeStyles.IMCContainer}>
-            {IMC === 0 ? (
+          {IMC === 0 ? (
+            <>
+              <InputTextInfo />
+              <TouchableOpacity
+                onPress={
+                  btnState === true ? () => handleIMC() : () => handleIMCAgain()
+                }
+                style={HomeStyles.Button}
+                activeOpacity={0.6}
+              >
+                <Text style={HomeStyles.TextBtn}>{TexBtn}</Text>
+              </TouchableOpacity>
               <Text style={HomeStyles.TextWithoutResult}>
                 Fill the height and weight fields
               </Text>
-            ) : (
+            </>
+          ) : (
+            <View style={HomeStyles.IMCContainer}>
               <View style={HomeStyles.ResultIMCContainer}>
                 <Text style={HomeStyles.TextResultIMC}>Your IMC is:</Text>
                 <Text style={HomeStyles.ResultIMCValue}>
@@ -51,8 +53,17 @@ export default function Home() {
                   <Text style={HomeStyles.TextShareBtn}>Share 🤩</Text>
                 </TouchableOpacity>
               </View>
-            )}
-          </View>
+              <TouchableOpacity
+                onPress={
+                  btnState === true ? () => handleIMC() : () => handleIMCAgain()
+                }
+                style={HomeStyles.Button}
+                activeOpacity={0.6}
+              >
+                <Text style={HomeStyles.TextBtn}>{TexBtn}</Text>
+              </TouchableOpacity>
+            </View>
+          )}
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
