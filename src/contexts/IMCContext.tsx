@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { Alert } from 'react-native';
+import { Alert, Keyboard } from 'react-native';
 
 interface Props {
   children: React.ReactNode;
@@ -26,12 +26,16 @@ function IMCContextProvider({ children }: Props) {
   const [IMC, setIMC] = useState<number>(0);
 
   function handleIMC() {
-    if (weight && height !== 0) {
+    if (weight >= 30 && weight <= 200 && height >= 1 && height <= 2.20) {
       setIMC(Number((weight / (height * height)).toFixed(2)));
       setBtnState(false)
       setTexBtn('Calculate again');
-    } else {
+      Keyboard.dismiss();
+    } else if (weight === 0 && height === 0) {
       Alert.alert('Insert the datas on the fields 😅')
+    }
+    else {
+      Alert.alert('Weight data must be greater than 30 and Height must be greater than 1.00❗')
     }
   }
 
