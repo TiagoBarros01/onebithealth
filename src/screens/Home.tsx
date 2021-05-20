@@ -39,11 +39,15 @@ export default function Home() {
               </Text>
             ) : (
               <View style={HomeStyles.ResultIMCContainer}>
-                <Text style={HomeStyles.TextResultIMC} >Your IMC is:</Text>
+                <Text style={HomeStyles.TextResultIMC}>Your IMC is:</Text>
                 <Text style={HomeStyles.ResultIMCValue}>
                   {IMC.toString().replace('.', ',')}
                 </Text>
-                <TouchableOpacity onPress={() => onShare()} style={HomeStyles.ShareBtn} activeOpacity={.6} >
+                <TouchableOpacity
+                  onPress={() => onShare()}
+                  style={HomeStyles.ShareBtn}
+                  activeOpacity={0.6}
+                >
                   <Text style={HomeStyles.TextShareBtn}>Share 🤩</Text>
                 </TouchableOpacity>
               </View>

@@ -9,7 +9,7 @@ export const HomeStyles = StyleSheet.create({
     alignItems: 'center',
   },
   Title: {
-    height: 150,
+    height: 130,
     alignItems: 'center',
     justifyContent: 'center',
   },
