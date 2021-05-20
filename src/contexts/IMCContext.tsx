@@ -7,10 +7,10 @@ interface Props {
 interface IMCContextData {
   handleIMC: () => void;
   handleIMCAgain: () => void;
-  setWeight: any;
-  setHeight: any;
-  weight: any;
-  height: any;
+  setWeight: () => number;
+  setHeight: () => number;
+  weight: number;
+  height: number;
   IMC: number;
   TexBtn: string;
   btnState: boolean;
@@ -19,15 +19,15 @@ interface IMCContextData {
 const IMCContext = createContext<IMCContextData>({} as IMCContextData);
 
 function IMCContextProvider({ children }: Props) {
-  const [weight, setWeight] = useState(0);
-  const [height, setHeight] = useState(0);
-  const [TexBtn, setTexBtn] = useState('Calculate');
+  const [weight, setWeight] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
+  const [TexBtn, setTexBtn] = useState<string>('Calculate');
   const [btnState, setBtnState] = useState<boolean>(true);
-  const [IMC, setIMC] = useState(0);
+  const [IMC, setIMC] = useState<number>(0);
 
   function handleIMC() {
     if (weight && height !== 0) {
-      setIMC((weight / (height * height)).toFixed(2));
+      setIMC(Number((weight / (height * height)).toFixed(2)));
       setBtnState(false)
       setTexBtn('Calculate again');
     } else {

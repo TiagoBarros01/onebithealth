@@ -29,7 +29,7 @@ export default function Home() {
             >
             <Text style={HomeStyles.TextBtn}>{TexBtn}</Text>
           </TouchableOpacity>
-            <Text>{IMC === 0 ? '' : `Your IMC is: ${IMC}`}</Text>
+            <Text>{IMC === 0 ? '' : `Your IMC is: ${IMC.toString().replace('.',',')}`}</Text>
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
