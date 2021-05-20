@@ -4,7 +4,7 @@ import { DefaultTheme } from '../themes/light';
 export const HomeStyles = StyleSheet.create({
   Area: {
     flex: 1,
-    backgroundColor: DefaultTheme.background,
+    backgroundColor: DefaultTheme.colors.background,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -14,7 +14,7 @@ export const HomeStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   Text: {
-    color: DefaultTheme.red,
+    color: DefaultTheme.colors.red,
     fontSize: 25,
     fontWeight: 'bold',
   },
@@ -23,14 +23,14 @@ export const HomeStyles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
 
-    backgroundColor: '#fff',
+    backgroundColor: DefaultTheme.colors.white,
 
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     padding: 30,
   },
   Button: {
-    backgroundColor: DefaultTheme.red,
+    backgroundColor: DefaultTheme.colors.red,
 
     width: '70%',
     height: 45,
@@ -40,7 +40,7 @@ export const HomeStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   TextBtn: {
-    color: '#fff',
+    color: DefaultTheme.colors.white,
     fontWeight: 'bold',
     fontSize: 14,
   },
