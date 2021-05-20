@@ -48,7 +48,6 @@ export const HomeStyles = StyleSheet.create({
     flex: 1,
     width: '100%',
     alignItems: 'center',
-    justifyContent: 'center',
   },
   TextWithoutResult: {
     marginTop: 40,
@@ -56,9 +55,8 @@ export const HomeStyles = StyleSheet.create({
     color: Theme.colors.red
   },
   ResultIMCContainer: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    marginBottom: 25,
   },
   TextResultIMC: {
     fontSize: 24,
@@ -71,7 +69,7 @@ export const HomeStyles = StyleSheet.create({
     color: Theme.colors.red,
 
     marginTop: 10,
-    marginBottom: 30
+    marginBottom: 20,
   },
   ShareBtn: {
     width: 110,
