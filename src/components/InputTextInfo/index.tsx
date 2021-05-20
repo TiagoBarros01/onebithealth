@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { Text, TextInput, View } from 'react-native';
+import React, { useContext, useState } from 'react';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { IMCContext } from '../../contexts/IMCContext';
 import { InputStyles } from './style';
 
 export function InputTextInfo() {
-  const [height, setHeight] = useState<string>();
-  const [weight, setWeight] = useState<string>();
+  const { setHeight, setWeight } =
+    useContext(IMCContext);
 
   return (
     <>
@@ -14,7 +15,6 @@ export function InputTextInfo() {
           style={InputStyles.Input}
           placeholder="Ex. 1.75"
           keyboardType="numeric"
-          value={height}
           onChangeText={setHeight}
           maxLength={3}
         />
@@ -25,7 +25,6 @@ export function InputTextInfo() {
           style={InputStyles.Input}
           placeholder="Ex. 74.70"
           keyboardType="numeric"
-          value={weight}
           onChangeText={setWeight}
           maxLength={6}
         />

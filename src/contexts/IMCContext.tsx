@@ -3,26 +3,30 @@ import React, { createContext, useState } from 'react';
 interface Props {
   children: React.ReactNode;
 }
-
 interface IMCContextData {
-  IMCCalculator: (weight: number, height: number) => void;
-  IMC: unknown;
+  handleIMC: () => void;
+  setWeight: any;
+  setHeight: any;
 }
 
 const IMCContext = createContext<IMCContextData>({} as IMCContextData);
 
 function IMCContextProvider({ children }: Props) {
+  const [weight, setWeight] = useState(0);
+  const [height, setHeight] = useState(0);
   const [IMC, setIMC] = useState();
 
-  function IMCCalculator(weight: number, height: number) {
-    setIMC(Math.round(weight/(height*height)))
+  function handleIMC() {
+    console.log(Math.round(weight / (height * height)));
   }
 
   return (
-    <IMCContext.Provider value={{ IMCCalculator, IMC }}>
+    <IMCContext.Provider
+      value={{ handleIMC, setWeight, setHeight }}
+    >
       {children}
     </IMCContext.Provider>
-  )
+  );
 }
 
-export { IMCContext, IMCContextProvider } 
+export { IMCContext, IMCContextProvider };
