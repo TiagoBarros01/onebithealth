@@ -44,4 +44,23 @@ export const HomeStyles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 14,
   },
+  ResultIMCContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  TextWithoutResult: {
+    fontSize: 20,
+  },
+  TextResultIMC: {
+    fontSize: 24,
+    color: Theme.colors.red,
+    textAlign: 'center',
+
+  },
+  ResultIMCValue: {
+    fontWeight: 'bold',
+    fontSize: 36,
+    textAlign: 'center'
+  }
 });
