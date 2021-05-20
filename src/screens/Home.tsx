@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import {
+  FlatList,
   Keyboard,
   SafeAreaView,
   Text,
@@ -12,7 +13,7 @@ import { IMCContext } from '../contexts/IMCContext';
 import { HomeStyles } from '../styles/screens/Home';
 
 export default function Home() {
-  const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare } =
+  const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList } =
     useContext(IMCContext);
 
   return (
@@ -62,6 +63,14 @@ export default function Home() {
               >
                 <Text style={HomeStyles.TextBtn}>{TexBtn}</Text>
               </TouchableOpacity>
+              <FlatList
+                style={HomeStyles.IMCLists}
+                data={IMCList.reverse()}
+                renderItem={({ item }) => (
+                  <Text>IMC's results: {item.imc} </Text>
+                )}
+                key={(item: any) => item.id}
+              />
             </View>
           )}
         </View>

@@ -85,5 +85,8 @@ export const HomeStyles = StyleSheet.create({
   TextShareBtn: {
     color: Theme.colors.white,
     fontSize: 16,
+  },
+  IMCLists: {
+    
   }
 });

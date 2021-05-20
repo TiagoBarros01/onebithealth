@@ -15,6 +15,7 @@ interface IMCContextData {
   IMC: number;
   TexBtn: string;
   btnState: boolean;
+  IMCList: any[];
 }
 
 const IMCContext = createContext<IMCContextData>({} as IMCContextData);
@@ -25,10 +26,17 @@ function IMCContextProvider({ children }: Props) {
   const [TexBtn, setTexBtn] = useState<string>('Calculate');
   const [btnState, setBtnState] = useState<boolean>(true);
   const [IMC, setIMC] = useState<number>(0);
+  const [IMCList, setIMCList] = useState<any[]>([]);
 
   function handleIMC() {
     if (weight >= 30 && weight <= 200 && height >= 1 && height <= 2.2) {
-      setIMC(Number((weight / (height * height)).toFixed(2)));
+      let totalIMC = Number((weight / (height * height)).toFixed(2));
+      setIMCList((arr) => [
+        ...arr,
+        { id: new Date().getTime(), imc: totalIMC },
+      ]);
+      setIMC(totalIMC)
+
       setBtnState(false);
       setTexBtn('Calculate again');
       Keyboard.dismiss();
@@ -52,8 +60,8 @@ function IMCContextProvider({ children }: Props) {
 
   async function onShare() {
     const res = await Share.share({
-      message: `Today my IMC is: ${IMC}`
-    })
+      message: `Today my IMC is: ${IMC}`,
+    });
   }
 
   return (
@@ -69,7 +77,7 @@ function IMCContextProvider({ children }: Props) {
         IMC,
         TexBtn,
         btnState,
-        
+        IMCList,
       }}
     >
       {children}
