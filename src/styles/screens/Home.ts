@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { DefaultTheme } from '../themes/light';
 
 export const HomeStyles = StyleSheet.create({
   Area: {
     flex: 1,
-    backgroundColor: '#eee',
+    backgroundColor: DefaultTheme.background,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -13,7 +14,7 @@ export const HomeStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   Text: {
-    color: 'red',
+    color: DefaultTheme.red,
     fontSize: 25,
     fontWeight: 'bold',
   },
@@ -29,7 +30,7 @@ export const HomeStyles = StyleSheet.create({
     padding: 30,
   },
   Button: {
-    backgroundColor: 'red',
+    backgroundColor: DefaultTheme.red,
 
     width: '70%',
     height: 45,

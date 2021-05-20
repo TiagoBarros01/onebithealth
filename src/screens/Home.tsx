@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { InputTextInfo } from '../components/InputTextInfo';
 import { IMCContext } from '../contexts/IMCContext';
-import { HomeStyles } from '../styles/Home';
+import { HomeStyles } from '../styles/screens/Home';
 
 export default function Home() {
   const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState } = useContext(IMCContext);
