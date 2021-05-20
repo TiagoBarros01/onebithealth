@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { DefaultTheme } from '../themes/light';
+import { Theme } from '../themes/light';
 
 export const HomeStyles = StyleSheet.create({
   Area: {
     flex: 1,
-    backgroundColor: DefaultTheme.colors.background,
+    backgroundColor: Theme.colors.background,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -14,7 +14,7 @@ export const HomeStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   Text: {
-    color: DefaultTheme.colors.red,
+    color: Theme.colors.red,
     fontSize: 25,
     fontWeight: 'bold',
   },
@@ -23,14 +23,14 @@ export const HomeStyles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
 
-    backgroundColor: DefaultTheme.colors.white,
+    backgroundColor: Theme.colors.white,
 
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     padding: 30,
   },
   Button: {
-    backgroundColor: DefaultTheme.colors.red,
+    backgroundColor: Theme.colors.red,
 
     width: '70%',
     height: 45,
@@ -40,7 +40,7 @@ export const HomeStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   TextBtn: {
-    color: DefaultTheme.colors.white,
+    color: Theme.colors.white,
     fontWeight: 'bold',
     fontSize: 14,
   },

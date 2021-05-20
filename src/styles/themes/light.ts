@@ -1,4 +1,4 @@
-interface DefaultThemeProps {
+interface ThemeProps {
   title: string;
 
   colors: {
@@ -11,7 +11,7 @@ interface DefaultThemeProps {
   
 }
 
-export const DefaultTheme: DefaultThemeProps = {
+export const Theme: ThemeProps = {
   title: 'light',
 
   colors: {

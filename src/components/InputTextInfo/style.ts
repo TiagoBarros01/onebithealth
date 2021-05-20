@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { DefaultTheme } from "../../styles/themes/light";
+import { Theme } from "../../styles/themes/light";
 
 export const InputStyles = StyleSheet.create({
   Container: {
@@ -11,10 +11,10 @@ export const InputStyles = StyleSheet.create({
     paddingLeft: 10,
     fontSize: 16,
     fontWeight: 'bold',
-    color: DefaultTheme.colors.textColor,
+    color: Theme.colors.textColor,
   },
   Input: {
-    backgroundColor: DefaultTheme.colors.inputColor,
+    backgroundColor: Theme.colors.inputColor,
     height: 45,
 
     marginTop: 15,
