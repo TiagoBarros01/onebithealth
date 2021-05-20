@@ -7,6 +7,7 @@ interface IMCContextData {
   handleIMC: () => void;
   setWeight: any;
   setHeight: any;
+  IMC: number;
 }
 
 const IMCContext = createContext<IMCContextData>({} as IMCContextData);
@@ -14,15 +15,15 @@ const IMCContext = createContext<IMCContextData>({} as IMCContextData);
 function IMCContextProvider({ children }: Props) {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
-  const [IMC, setIMC] = useState();
+  const [IMC, setIMC] = useState(0);
 
   function handleIMC() {
-    console.log(Math.round(weight / (height * height)));
+    setIMC(Math.round(weight / (height * height)));
   }
 
   return (
     <IMCContext.Provider
-      value={{ handleIMC, setWeight, setHeight }}
+      value={{ handleIMC, setWeight, setHeight, IMC }}
     >
       {children}
     </IMCContext.Provider>

@@ -10,6 +10,7 @@ export function InputTextInfo() {
   return (
     <>
       <View style={InputStyles.Container}>
+        <Text></Text>
         <Text style={InputStyles.Text}>Height</Text>
         <TextInput
           style={InputStyles.Input}
