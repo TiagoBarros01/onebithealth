@@ -33,11 +33,17 @@ function IMCContextProvider({ children }: Props) {
   function handleIMC() {
     if (weight >= 30 && weight <= 200 && height >= 1 && height <= 2.2) {
       let totalIMC = Number((weight / (height * height)).toFixed(2));
-      setIMCList((arr) => [
-        ...arr,
-        { date: format(new Date(), 'EEEEEE, d MMM', { locale: ptBR }), imc: totalIMC },
-      ].reverse());
-      setIMC(totalIMC)
+      setIMCList((arr) =>
+        [
+          ...arr,
+          {
+            date: format(new Date(), 'EEEEEE, d MMM', { locale: ptBR }),
+            id: new Date().getTime,
+            imc: totalIMC,
+          },
+        ].reverse()
+      );
+      setIMC(totalIMC);
 
       setBtnState(false);
       setTexBtn('Calculate again');

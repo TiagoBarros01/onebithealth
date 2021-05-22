@@ -5,21 +5,18 @@ import { HomeStyles } from '../../styles/screens/Home';
 import { IMCStyles } from './style';
 
 export function IMCComponent() {
-  const [listCount, setListCount] = useState(0);
   const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList } =
     useContext(IMCContext);
-
-  const handleListCount = () => {
-    setListCount((prevState) => prevState + 1)
-  }
 
   return (
     <View style={IMCStyles.IMCContainer}>
       <View style={IMCStyles.ResultIMCContainer}>
-        <Text style={IMCStyles.TextIMC}>Your IMC is:</Text>
-        <Text style={IMCStyles.TextIMCResult}>
-          {IMC.toString().replace('.', ',')}
-        </Text>
+        <View>
+          <Text style={IMCStyles.TextIMC}>Your IMC is:</Text>
+          <Text style={IMCStyles.TextIMCResult}>
+            {IMC.toString().replace('.', ',')}
+          </Text>
+        </View>
         <TouchableOpacity
           onPress={() => onShare()}
           style={IMCStyles.ShareBtn}
@@ -41,10 +38,9 @@ export function IMCComponent() {
         style={IMCStyles.ListOfIMCs}
         keyExtractor={(item: any) => item.id}
         renderItem={({ item }) => {
-          console.log({ item })
           return (
             <View style={IMCStyles.ListIMCContainer}>
-              <Text>{item.id}</Text>
+              <Text>{item.date}</Text>
               <Text style={IMCStyles.ListIMCItem}>{item.imc}</Text>
             </View>
           );

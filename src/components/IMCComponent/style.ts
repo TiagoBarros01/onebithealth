@@ -8,7 +8,9 @@ export const IMCStyles = StyleSheet.create({
     alignItems: 'center',
   },
   ResultIMCContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
+
     marginBottom: 25,
   },
   TextIMC: {
@@ -21,17 +23,16 @@ export const IMCStyles = StyleSheet.create({
     textAlign: 'center',
     color: Theme.colors.red,
 
-    marginTop: 10,
-    marginBottom: 20,
   },
   ShareBtn: {
-    width: 110,
-    height: 40,
+    width: 90,
+    height: 50,
 
     justifyContent: 'center',
     alignItems: 'center',
 
-    borderRadius: 20,
+    borderRadius: 15,
+    marginLeft: 20,
 
     backgroundColor: Theme.colors.red,
   },
@@ -51,13 +52,14 @@ export const IMCStyles = StyleSheet.create({
     width: '100%',
     height: 45,
 
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     borderRadius: 15,
 
     marginTop: 5,
 
-    backgroundColor: Theme.colors.lightBackground
+    backgroundColor: Theme.colors.lightBackground,
   },
   ListIMCItem: {
     color: Theme.colors.red,
