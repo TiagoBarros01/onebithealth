@@ -45,7 +45,7 @@ export function IMCComponent() {
             <Text style={IMCStyles.ListIMCItem}>{item.imc}</Text>
           </View>
         )}
-        // showsVerticalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

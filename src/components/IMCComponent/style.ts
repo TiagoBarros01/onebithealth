@@ -49,7 +49,7 @@ export const IMCStyles = StyleSheet.create({
   },
   ListIMCContainer: {
     width: '100%',
-    height: 50,
+    height: 45,
 
     alignItems: 'center',
     justifyContent: 'center',
