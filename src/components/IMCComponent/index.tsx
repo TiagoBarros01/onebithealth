@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
-import {
-  FlatList,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import React, { useContext, useState } from 'react';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { IMCStyles } from './style';
 
 export function IMCComponent() {
+  const [listCount, setListCount] = useState(0);
   const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList } =
     useContext(IMCContext);
+
+  const handleListCount = () => {
+    setListCount((prevState) => prevState + 1)
+  }
 
   return (
     <View style={IMCStyles.IMCContainer}>
@@ -40,11 +40,15 @@ export function IMCComponent() {
         data={IMCList}
         style={IMCStyles.ListOfIMCs}
         keyExtractor={(item: any) => item.id}
-        renderItem={({ item }) => (
-          <View style={IMCStyles.ListIMCContainer}>
-            <Text style={IMCStyles.ListIMCItem}>{item.imc}</Text>
-          </View>
-        )}
+        renderItem={({ item }) => {
+          console.log({ item })
+          return (
+            <View style={IMCStyles.ListIMCContainer}>
+              <Text>{item.id}</Text>
+              <Text style={IMCStyles.ListIMCItem}>{item.imc}</Text>
+            </View>
+          );
+        }}
         showsVerticalScrollIndicator={false}
       />
     </View>

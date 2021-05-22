@@ -57,7 +57,7 @@ export const IMCStyles = StyleSheet.create({
 
     marginTop: 5,
 
-    backgroundColor: Theme.colors.background
+    backgroundColor: Theme.colors.lightBackground
   },
   ListIMCItem: {
     color: Theme.colors.red,

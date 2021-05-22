@@ -1,3 +1,5 @@
+import { format } from 'date-fns/esm';
+import { ptBR } from 'date-fns/locale';
 import React, { createContext, useState } from 'react';
 import { Alert, Keyboard, Share, Vibration } from 'react-native';
 
@@ -33,7 +35,7 @@ function IMCContextProvider({ children }: Props) {
       let totalIMC = Number((weight / (height * height)).toFixed(2));
       setIMCList((arr) => [
         ...arr,
-        { id: new Date().getTime(), imc: totalIMC },
+        { date: format(new Date(), 'EEEEEE, d MMM', { locale: ptBR }), imc: totalIMC },
       ].reverse());
       setIMC(totalIMC)
 
