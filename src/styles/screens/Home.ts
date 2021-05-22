@@ -29,4 +29,19 @@ export const HomeStyles = StyleSheet.create({
     borderTopRightRadius: 30,
     padding: 30,
   },
+  Button: {
+    backgroundColor: Theme.colors.red,
+
+    width: '70%',
+    height: 45,
+    borderRadius: 15,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  TextBtn: {
+    color: Theme.colors.white,
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
 });

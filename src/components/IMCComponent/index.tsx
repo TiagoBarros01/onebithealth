@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { IMCContext } from '../../contexts/IMCContext';
-import { FormStyles } from '../Form/style';
+import { HomeStyles } from '../../styles/screens/Home';
 import { IMCStyles } from './style';
 
 export function IMCComponent() {
@@ -25,10 +25,10 @@ export function IMCComponent() {
       </View>
       <TouchableOpacity
         onPress={btnState === true ? () => handleIMC() : () => handleIMCAgain()}
-        style={FormStyles.Button}
+        style={HomeStyles.Button}
         activeOpacity={0.6}
       >
-        <Text style={FormStyles.TextBtn}>{TexBtn}</Text>
+        <Text style={HomeStyles.TextBtn}>{TexBtn}</Text>
       </TouchableOpacity>
       <Text style={IMCStyles.TextList}>Your last IMC's results</Text>
       <FlatList

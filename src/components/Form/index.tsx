@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Text, TouchableOpacity } from "react-native";
 import { IMCContext } from "../../contexts/IMCContext";
+import { HomeStyles } from "../../styles/screens/Home";
 import { InputTextInfo } from "../InputTextInfo";
 import { FormStyles } from "./style";
 
@@ -13,10 +14,10 @@ export function Form() {
       <InputTextInfo />
       <TouchableOpacity
         onPress={btnState === true ? () => handleIMC() : () => handleIMCAgain()}
-        style={FormStyles.Button}
+        style={HomeStyles.Button}
         activeOpacity={0.6}
       >
-        <Text style={FormStyles.TextBtn}>{TexBtn}</Text>
+        <Text style={HomeStyles.TextBtn}>{TexBtn}</Text>
       </TouchableOpacity>
       <Text style={FormStyles.TextWithoutResult}>
         Fill the height and weight fields
