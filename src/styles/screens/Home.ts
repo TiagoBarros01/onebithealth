@@ -29,31 +29,13 @@ export const HomeStyles = StyleSheet.create({
     borderTopRightRadius: 30,
     padding: 30,
   },
-  Button: {
-    backgroundColor: Theme.colors.red,
 
-    width: '70%',
-    height: 45,
-    borderRadius: 15,
-
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  TextBtn: {
-    color: Theme.colors.white,
-    fontWeight: 'bold',
-    fontSize: 14,
-  },
   IMCContainer: {
     flex: 1,
     width: '100%',
     alignItems: 'center',
   },
-  TextWithoutResult: {
-    marginTop: 40,
-    fontSize: 20,
-    color: Theme.colors.red
-  },
+
   ResultIMCContainer: {
     alignItems: 'center',
     marginBottom: 25,
@@ -80,13 +62,14 @@ export const HomeStyles = StyleSheet.create({
 
     borderRadius: 20,
 
-    backgroundColor: Theme.colors.red
+    backgroundColor: Theme.colors.red,
   },
   TextShareBtn: {
     color: Theme.colors.white,
     fontSize: 16,
   },
-  IMCLists: {
-    
-  }
+  TextList: {
+    marginTop: 20,
+    fontSize: 22,
+  },
 });
