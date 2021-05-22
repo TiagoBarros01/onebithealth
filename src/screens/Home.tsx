@@ -1,18 +1,12 @@
 import React, { useContext } from 'react';
-import {
-  Keyboard,
-  SafeAreaView,
-  Text,
-  View,
-} from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
 import { Form } from '../components/Form';
 import { IMCComponent } from '../components/IMCComponent';
 import { IMCContext } from '../contexts/IMCContext';
 import { HomeStyles } from '../styles/screens/Home';
 
 export default function Home() {
-  const { IMC } =
-    useContext(IMCContext);
+  const { IMC } = useContext(IMCContext);
 
   return (
     <SafeAreaView style={HomeStyles.Area}>
@@ -20,11 +14,7 @@ export default function Home() {
         <Text style={HomeStyles.Text}>ONEBITHEALTH 🎯</Text>
       </View>
       <View style={HomeStyles.Main}>
-        {IMC === 0 ? (
-          <Form />
-        ) : (
-          <IMCComponent />
-        )}
+        {IMC === 0 ? <Form /> : <IMCComponent />}
       </View>
     </SafeAreaView>
   );

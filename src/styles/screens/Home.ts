@@ -21,7 +21,6 @@ export const HomeStyles = StyleSheet.create({
   Main: {
     flex: 1,
     width: '100%',
-    alignItems: 'center',
 
     backgroundColor: Theme.colors.white,
 
