@@ -34,7 +34,7 @@ function IMCContextProvider({ children }: Props) {
       setIMCList((arr) => [
         ...arr,
         { id: new Date().getTime(), imc: totalIMC },
-      ]);
+      ].reverse());
       setIMC(totalIMC)
 
       setBtnState(false);

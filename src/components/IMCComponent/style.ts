@@ -11,11 +11,11 @@ export const IMCStyles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 25,
   },
-  TextResultIMC: {
+  TextIMC: {
     fontSize: 24,
     textAlign: 'center',
   },
-  ResultIMCValue: {
+  TextIMCResult: {
     fontWeight: 'bold',
     fontSize: 36,
     textAlign: 'center',
@@ -39,8 +39,30 @@ export const IMCStyles = StyleSheet.create({
     color: Theme.colors.white,
     fontSize: 16,
   },
-  TextList: {
+  TitleList: {
     marginTop: 20,
     fontSize: 22,
   },
+  ListOfIMCs: {
+    marginTop: 20,
+    width: '100%',
+  },
+  ListIMCContainer: {
+    width: '100%',
+    height: 50,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15,
+
+    marginTop: 5,
+
+    backgroundColor: Theme.colors.background
+  },
+  ListIMCItem: {
+    color: Theme.colors.red,
+    fontSize: 20,
+    fontWeight: 'bold',
+    letterSpacing: .5,
+  }
 })

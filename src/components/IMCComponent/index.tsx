@@ -16,8 +16,8 @@ export function IMCComponent() {
   return (
     <View style={IMCStyles.IMCContainer}>
       <View style={IMCStyles.ResultIMCContainer}>
-        <Text style={IMCStyles.TextResultIMC}>Your IMC is:</Text>
-        <Text style={IMCStyles.ResultIMCValue}>
+        <Text style={IMCStyles.TextIMC}>Your IMC is:</Text>
+        <Text style={IMCStyles.TextIMCResult}>
           {IMC.toString().replace('.', ',')}
         </Text>
         <TouchableOpacity
@@ -35,15 +35,17 @@ export function IMCComponent() {
       >
         <Text style={HomeStyles.TextBtn}>{TexBtn}</Text>
       </TouchableOpacity>
-      <Text style={IMCStyles.TextList}>Your last IMC's results</Text>
+      <Text style={IMCStyles.TitleList}>Your last IMC's results</Text>
       <FlatList
-        data={IMCList.reverse()}
+        data={IMCList}
+        style={IMCStyles.ListOfIMCs}
         keyExtractor={(item: any) => item.id}
         renderItem={({ item }) => (
-          <View>
-            <Text>{item.imc}</Text>
+          <View style={IMCStyles.ListIMCContainer}>
+            <Text style={IMCStyles.ListIMCItem}>{item.imc}</Text>
           </View>
         )}
+        // showsVerticalScrollIndicator={false}
       />
     </View>
   );
