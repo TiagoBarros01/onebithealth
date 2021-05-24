@@ -22,7 +22,7 @@ export function IMCComponent() {
           style={IMCStyles.ShareBtn}
           activeOpacity={0.6}
         >
-          <Text style={IMCStyles.TextShareBtn}>Share 🤩</Text>
+          <Text style={IMCStyles.TextShareBtn}>Share 🔗</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity
