@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { IMCStyles } from './style';
