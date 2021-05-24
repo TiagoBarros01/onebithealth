@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { DefaultTheme } from '../../styles/themes/Theme.interface';
+import { DefaultTheme } from '../../styles/themes/styled';
 
 export const InputStyles = (theme: DefaultTheme) => {
   const styles = StyleSheet.create({

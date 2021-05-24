@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useMemo, useState } from 'react';
-import { DefaultTheme } from '../styles/themes/Theme.interface';
+import { DefaultTheme } from '../styles/themes/styled';
 import dark from '../styles/themes/dark';
 import light from '../styles/themes/light';
 interface ThemeContextData {
