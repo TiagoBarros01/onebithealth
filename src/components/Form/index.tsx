@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import {
   Keyboard,
   Pressable,
@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 import { IMCContext } from '../../contexts/IMCContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { InputTextInfo } from '../InputTextInfo';
 import { FormStyles } from './style';
@@ -15,22 +16,28 @@ export function Form() {
   const { handleIMC, handleIMCAgain, TexBtn, btnState } =
     useContext(IMCContext);
 
+  const { theme } = useContext(ThemeContext);
+
+  const Styles = useMemo(() => FormStyles(theme), [theme]);
+  const StylesHome = useMemo(() => HomeStyles(theme), [theme]);
+
+
   return (
     <Pressable onPress={Keyboard.dismiss}>
       <InputTextInfo />
-      <View style={FormStyles.BtnContainer}>
+      <View style={Styles.BtnContainer}>
         <TouchableOpacity
           onPress={
             btnState === true ? () => handleIMC() : () => handleIMCAgain()
           }
-          style={HomeStyles.Button}
+          style={StylesHome.Button}
           activeOpacity={0.6}
         >
-          <Text style={HomeStyles.TextBtn}>{TexBtn}</Text>
+          <Text style={StylesHome.TextBtn}>{TexBtn}</Text>
         </TouchableOpacity>
       </View>
-      <View style={FormStyles.WarningContainer}>
-        <Text style={FormStyles.WarningText}>
+      <View style={Styles.WarningContainer}>
+        <Text style={Styles.WarningText}>
           Fill the height and weight fields
         </Text>
       </View>

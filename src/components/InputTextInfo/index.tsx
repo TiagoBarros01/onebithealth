@@ -1,18 +1,22 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { IMCContext } from '../../contexts/IMCContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { InputStyles } from './style';
 
 export function InputTextInfo() {
   const { setHeight, setWeight, height, weight } =
     useContext(IMCContext);
+  const { theme } = useContext(ThemeContext)
+
+    const Styles = useMemo(() => InputStyles(theme), [theme])
 
   return (
     <>
-      <View style={InputStyles.Container}>
-        <Text style={InputStyles.Text}>Height</Text>
+      <View style={Styles.Container}>
+        <Text style={Styles.Text}>Height</Text>
         <TextInput
-          style={InputStyles.Input}
+          style={Styles.Input}
           placeholder="Ex. 1.75"
           keyboardType="numeric"
           onChangeText={setHeight}
@@ -20,10 +24,10 @@ export function InputTextInfo() {
           maxLength={4}
         />
       </View>
-      <View style={InputStyles.Container}>
-        <Text style={InputStyles.Text}>Weight</Text>
+      <View style={Styles.Container}>
+        <Text style={Styles.Text}>Weight</Text>
         <TextInput
-          style={InputStyles.Input}
+          style={Styles.Input}
           placeholder="Ex. 74.70"
           keyboardType="numeric"
           onChangeText={setWeight}
