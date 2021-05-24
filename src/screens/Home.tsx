@@ -6,12 +6,13 @@ import { IMCContext } from '../contexts/IMCContext';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { HomeStyles } from '../styles/screens/Home';
+import { useThemeAwareObject } from '../utils/ThemeAwareObject.hook';
 
 export default function Home() {
   const { IMC } = useContext(IMCContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  const Styles = useMemo(() => HomeStyles(theme), [theme]);
+  const Styles = useThemeAwareObject(HomeStyles);
 
   return (
     <SafeAreaView style={Styles.Area}>
