@@ -1,16 +1,4 @@
-interface ThemeProps {
-  title: string;
-
-  colors: {
-    background: string;
-    textColor: string;
-    inputColor: string;
-    lightBackground: string;
-    red: string;
-    white: string;
-  };
-  
-}
+import { ThemeProps } from './ThemeProps'
 
 export const Theme: ThemeProps = {
   title: 'light',
