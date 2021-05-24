@@ -47,6 +47,8 @@ export const IMCStyles = StyleSheet.create({
   ListOfIMCs: {
     marginTop: 20,
     width: '100%',
+    backgroundColor: Theme.colors.listBackground,
+    borderRadius: 15,
   },
   ListIMCContainer: {
     width: '100%',

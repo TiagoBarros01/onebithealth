@@ -6,6 +6,7 @@ export interface ThemeProps {
     textColor: string;
     inputColor: string;
     lightBackground: string;
+    listBackground: string;
     red: string;
     white: string;
   };
