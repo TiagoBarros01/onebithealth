@@ -1,6 +1,8 @@
 import { ColorTheme, Theme } from './Theme.interface';
 
 const defaultDarkColorTheme: ColorTheme = {
+  title: 'dark',
+
   background: '#111',
   textColor: '#eee',
   inputColor: '#f6f6f6',

@@ -1,6 +1,8 @@
 import { ColorTheme, Theme } from './Theme.interface';
 
 const defaultLightColorTheme: ColorTheme = {
+  title: 'light',
+
   background: '#e0e5e5',
   textColor: '#222',
   inputColor: '#f6f6f6',

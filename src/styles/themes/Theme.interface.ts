@@ -1,4 +1,6 @@
 export interface ColorTheme {
+  title: string;
+
   background: string;
   textColor: string;
   inputColor: string;
