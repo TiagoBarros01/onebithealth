@@ -61,6 +61,9 @@ export const IMCStyles = StyleSheet.create({
 
     backgroundColor: Theme.colors.lightBackground,
   },
+  ListIMCDate: {
+    fontSize: 14,
+  },
   ListIMCItem: {
     color: Theme.colors.red,
     fontSize: 20,

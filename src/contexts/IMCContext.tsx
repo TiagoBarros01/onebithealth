@@ -38,7 +38,7 @@ function IMCContextProvider({ children }: Props) {
           ...arr,
           {
             date: format(new Date(), 'EEEEEE, d MMM', { locale: ptBR }),
-            id: new Date().getTime,
+            id: new Date().getTime(),
             imc: totalIMC,
           },
         ].reverse()

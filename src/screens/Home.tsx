@@ -4,6 +4,8 @@ import { Form } from '../components/Form';
 import { IMCComponent } from '../components/IMCComponent';
 import { IMCContext } from '../contexts/IMCContext';
 import { HomeStyles } from '../styles/screens/Home';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { Theme } from '../styles/themes/light';
 
 export default function Home() {
   const { IMC } = useContext(IMCContext);
@@ -11,7 +13,10 @@ export default function Home() {
   return (
     <SafeAreaView style={HomeStyles.Area}>
       <View style={HomeStyles.Title}>
-        <Text style={HomeStyles.Text}>ONEBITHEALTH 🎯</Text>
+        <Text style={HomeStyles.Text}>
+          ONEBITHEALTH{' '}
+          <FontAwesome5 name="heartbeat" size={24} color={Theme.colors.red} />
+        </Text>
       </View>
       <View style={HomeStyles.Main}>
         {IMC === 0 ? <Form /> : <IMCComponent />}

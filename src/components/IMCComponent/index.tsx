@@ -41,7 +41,7 @@ export function IMCComponent() {
         renderItem={({ item }) => {
           return (
             <View style={IMCStyles.ListIMCContainer}>
-              <Text>{item.date}</Text>
+              <Text style={IMCStyles.ListIMCDate}>{item.date}</Text>
               <Text style={IMCStyles.ListIMCItem}>{item.imc}</Text>
             </View>
           );
