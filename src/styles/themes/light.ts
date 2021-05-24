@@ -1,6 +1,6 @@
 import { ColorTheme, Theme } from './Theme.interface';
 
-const defaultLightColorTheme: ColorTheme = {
+const light: ColorTheme = {
   title: 'light',
 
   background: '#e0e5e5',
@@ -15,5 +15,5 @@ const defaultLightColorTheme: ColorTheme = {
 };
 
 export const defaultLightTheme: Theme = {
-  colors: defaultLightColorTheme,
+  colors: light,
 }

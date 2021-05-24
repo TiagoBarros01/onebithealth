@@ -1,6 +1,6 @@
 import { ColorTheme, Theme } from './Theme.interface';
 
-const defaultDarkColorTheme: ColorTheme = {
+const dark: ColorTheme = {
   title: 'dark',
 
   background: '#111',
@@ -15,5 +15,5 @@ const defaultDarkColorTheme: ColorTheme = {
 };
 
 export const defaultDarkTheme: Theme = {
-  colors: defaultDarkColorTheme,
+  colors: dark,
 }
