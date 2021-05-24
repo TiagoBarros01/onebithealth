@@ -1,4 +1,4 @@
-export interface ColorTheme {
+export interface DefaultTheme {
   title: string;
 
   background: string;
@@ -11,5 +11,5 @@ export interface ColorTheme {
 }
 
 export interface Theme {
-  colors: ColorTheme
+  colors: DefaultTheme
 }

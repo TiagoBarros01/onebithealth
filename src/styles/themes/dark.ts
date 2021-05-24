@@ -1,6 +1,6 @@
-import { ColorTheme, Theme } from './Theme.interface';
+import { DefaultTheme, Theme } from './Theme.interface';
 
-const dark: ColorTheme = {
+const dark: DefaultTheme = {
   title: 'dark',
 
   background: '#111',
