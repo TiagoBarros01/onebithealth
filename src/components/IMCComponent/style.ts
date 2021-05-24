@@ -25,7 +25,7 @@ export const IMCStyles = StyleSheet.create({
 
   },
   ShareBtn: {
-    width: 90,
+    width: 75,
     height: 50,
 
     justifyContent: 'center',

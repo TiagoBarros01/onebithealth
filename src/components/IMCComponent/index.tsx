@@ -3,6 +3,7 @@ import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { IMCStyles } from './style';
+import { AntDesign } from '@expo/vector-icons'
 
 export function IMCComponent() {
   const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList } =
@@ -21,7 +22,9 @@ export function IMCComponent() {
           onPress={() => onShare()}
           style={IMCStyles.ShareBtn}
           activeOpacity={0.6}
-        ></TouchableOpacity>
+        >
+          <AntDesign name="sharealt" size={26} color="white" />
+        </TouchableOpacity>
       </View>
       <TouchableOpacity
         onPress={btnState === true ? () => handleIMC() : () => handleIMCAgain()}
