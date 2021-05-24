@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import React, { useContext } from 'react';
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { IMCStyles } from './style';
@@ -21,9 +21,7 @@ export function IMCComponent() {
           onPress={() => onShare()}
           style={IMCStyles.ShareBtn}
           activeOpacity={0.6}
-        >
-          <Text style={IMCStyles.TextShareBtn}>Share 🔗</Text>
-        </TouchableOpacity>
+        ></TouchableOpacity>
       </View>
       <TouchableOpacity
         onPress={btnState === true ? () => handleIMC() : () => handleIMCAgain()}
