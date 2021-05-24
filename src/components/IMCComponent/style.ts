@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { Theme } from '../../styles/themes/Theme.interface';
+import { DefaultTheme } from '../../styles/themes/Theme.interface';
 
-export const IMCStyles = (theme: Theme) => {
+export const IMCStyles = (theme: DefaultTheme) => {
   const Styles = StyleSheet.create({
     IMCContainer: {
       flex: 1,

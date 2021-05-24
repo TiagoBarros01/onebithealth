@@ -1,34 +1,33 @@
 import React, { createContext, useCallback, useMemo, useState } from 'react';
-import { Theme } from '../styles/themes/Theme.interface';
-import { defaultLightTheme } from '../styles/themes/light';
-import { defaultDarkTheme } from '../styles/themes/dark';
-
+import { DefaultTheme } from '../styles/themes/Theme.interface';
+import dark from '../styles/themes/dark';
+import light from '../styles/themes/light';
 interface ThemeContextData {
-  theme: Theme;
+  theme: DefaultTheme;
   toggleTheme: () => void;
 }
 
 interface Props {
-  initial: Theme;
+  initial: DefaultTheme;
   children?: React.ReactNode;
 }
 
 const ThemeContext = createContext<ThemeContextData>({
-  theme: defaultDarkTheme,
+  theme: light,
   toggleTheme: () => {
     console.log(`ThemeProvider isn't rendered 😞`);
   },
 });
 
 function ThemeContextProvider({ children, initial }: Props) {
-  const [theme, setTheme] = useState<Theme>(initial);
+  const [theme, setTheme] = useState(light);
 
   const toggleTheme = useCallback(() => {
     setTheme((currentTheme) => {
-      if (currentTheme.colors.title === defaultLightTheme.colors.title) {
-        return defaultDarkTheme;
-      } else if (currentTheme.colors.title === defaultDarkTheme.colors.title) {
-        return defaultLightTheme;
+      if (currentTheme.title === light.title) {
+        return dark;
+      } else if (currentTheme.title === dark.title) {
+        return light;
       }
 
       return currentTheme;

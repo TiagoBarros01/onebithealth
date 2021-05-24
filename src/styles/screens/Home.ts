@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { Theme } from '../themes/Theme.interface';
+import { DefaultTheme } from '../themes/Theme.interface';
 
-export const HomeStyles = (theme: Theme) => {
+export const HomeStyles = (theme: DefaultTheme) => {
   const styles = StyleSheet.create({
     Area: {
       flex: 1,

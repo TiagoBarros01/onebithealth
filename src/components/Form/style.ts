@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { Theme } from '../../styles/themes/Theme.interface';
+import { DefaultTheme } from '../../styles/themes/Theme.interface';
 
-export const FormStyles = (theme: Theme) => {
+export const FormStyles = (theme: DefaultTheme) => {
   const Styles = StyleSheet.create({
     BtnContainer: {
       alignItems: 'center',

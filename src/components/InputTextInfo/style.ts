@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { Theme } from '../../styles/themes/Theme.interface';
+import { DefaultTheme } from '../../styles/themes/Theme.interface';
 
-export const InputStyles = (theme: Theme) => {
+export const InputStyles = (theme: DefaultTheme) => {
   const styles = StyleSheet.create({
     Container: {
       width: '100%',

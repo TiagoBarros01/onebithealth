@@ -1,5 +1,5 @@
 import React from 'react';
-import { defaultDarkTheme } from '../styles/themes/dark';
+import light from '../styles/themes/light';
 
 import { IMCContextProvider } from './IMCContext';
 import { ThemeContextProvider } from './ThemeContext';
@@ -10,7 +10,7 @@ interface Props {
 
 export default function ContextProvider({ children }: Props) {
   return (
-    <ThemeContextProvider initial={defaultDarkTheme} >
+    <ThemeContextProvider initial={light} >
       <IMCContextProvider>{children}</IMCContextProvider>
     </ThemeContextProvider>
   );
