@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext } from 'react';
 import {
   Keyboard,
   Pressable,
@@ -7,8 +7,8 @@ import {
   View,
 } from 'react-native';
 import { IMCContext } from '../../contexts/IMCContext';
-import { ThemeContext } from '../../contexts/ThemeContext';
 import { HomeStyles } from '../../styles/screens/Home';
+import { useThemeAwareObject } from '../../utils/ThemeAwareObject.hook';
 import { InputTextInfo } from '../InputTextInfo';
 import { FormStyles } from './style';
 
@@ -16,11 +16,8 @@ export function Form() {
   const { handleIMC, handleIMCAgain, TexBtn, btnState } =
     useContext(IMCContext);
 
-  const { theme } = useContext(ThemeContext);
-
-  const Styles = useMemo(() => FormStyles(theme), [theme]);
-  const StylesHome = useMemo(() => HomeStyles(theme), [theme]);
-
+  const Styles = useThemeAwareObject(FormStyles);
+  const StylesHome = useThemeAwareObject(HomeStyles);
 
   return (
     <Pressable onPress={Keyboard.dismiss}>

@@ -6,7 +6,7 @@ type Generator<T extends {}> = (theme: DefaultTheme) => T;
 
 const useThemeAwareObject = <T extends {}>(fn: Generator<T>) => {
   const { theme } = useContext(ThemeContext);
-  
+
   const ThemeAwareObject = useMemo(() => fn(theme), [fn, theme]);
 
   return ThemeAwareObject;

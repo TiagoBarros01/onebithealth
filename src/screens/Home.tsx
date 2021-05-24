@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext } from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
 import { Form } from '../components/Form';
 import { IMCComponent } from '../components/IMCComponent';

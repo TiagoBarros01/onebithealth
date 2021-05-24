@@ -10,7 +10,7 @@ interface Props {
 
 export default function ContextProvider({ children }: Props) {
   return (
-    <ThemeContextProvider initial={light} >
+    <ThemeContextProvider initial={light}>
       <IMCContextProvider>{children}</IMCContextProvider>
     </ThemeContextProvider>
   );

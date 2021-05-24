@@ -1,18 +1,18 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext } from 'react';
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { IMCStyles } from './style';
 import { AntDesign } from '@expo/vector-icons';
 import { ThemeContext } from '../../contexts/ThemeContext';
+import { useThemeAwareObject } from '../../utils/ThemeAwareObject.hook';
 
 export function IMCComponent() {
   const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList } =
     useContext(IMCContext);
-  const { theme } = useContext(ThemeContext);
 
-  const Styles = useMemo(() => IMCStyles(theme), [theme]);
-  const StylesHome = useMemo(() => HomeStyles(theme), [theme]);
+  const Styles = useThemeAwareObject(IMCStyles);
+  const StylesHome = useThemeAwareObject(HomeStyles);
 
   return (
     <View style={Styles.IMCContainer}>

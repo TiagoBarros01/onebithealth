@@ -9,5 +9,5 @@ export interface DefaultTheme {
     listBackground: string;
     red: string;
     white: string;
-  }
+  };
 }
