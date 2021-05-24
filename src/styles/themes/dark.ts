@@ -14,9 +14,6 @@ const defaultDarkColorTheme: ColorTheme = {
   white: '#000',
 };
 
-export const defaultDarkThemeId = 'dark';
-
 export const defaultDarkTheme: Theme = {
-  id: defaultDarkThemeId,
   colors: defaultDarkColorTheme,
 }

@@ -1,7 +1,7 @@
 import React, { createContext, useCallback, useMemo, useState } from 'react';
 import { Theme } from '../styles/themes/Theme.interface';
-import { defaultLightTheme, defaultLightThemeId } from '../styles/themes/light';
-import { defaultDarkTheme, defaultDarkThemeId } from '../styles/themes/dark';
+import { defaultLightTheme } from '../styles/themes/light';
+import { defaultDarkTheme } from '../styles/themes/dark';
 
 interface ThemeContextData {
   theme: Theme;
@@ -14,7 +14,7 @@ interface Props {
 }
 
 const ThemeContext = createContext<ThemeContextData>({
-  theme: defaultLightTheme,
+  theme: defaultDarkTheme,
   toggleTheme: () => {
     console.log(`ThemeProvider isn't rendered 😞`);
   },
@@ -25,9 +25,9 @@ function ThemeContextProvider({ children, initial }: Props) {
 
   const toggleTheme = useCallback(() => {
     setTheme((currentTheme) => {
-      if (currentTheme.id === defaultLightThemeId) {
+      if (currentTheme.colors.title === defaultLightTheme.colors.title) {
         return defaultDarkTheme;
-      } else if (currentTheme.id === defaultDarkThemeId) {
+      } else if (currentTheme.colors.title === defaultDarkTheme.colors.title) {
         return defaultLightTheme;
       }
 

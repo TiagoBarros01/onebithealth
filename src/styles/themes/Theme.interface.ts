@@ -11,6 +11,5 @@ export interface ColorTheme {
 }
 
 export interface Theme {
-  id: string,
-  colors: ColorTheme,
+  colors: ColorTheme
 }

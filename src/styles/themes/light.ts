@@ -14,9 +14,6 @@ const defaultLightColorTheme: ColorTheme = {
   white: '#fff',
 };
 
-export const defaultLightThemeId = 'light';
-
 export const defaultLightTheme: Theme = {
-  id: defaultLightThemeId,
   colors: defaultLightColorTheme,
 }
