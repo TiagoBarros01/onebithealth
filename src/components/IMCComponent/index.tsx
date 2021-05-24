@@ -1,9 +1,14 @@
 import React, { useContext } from 'react';
-import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import {
+  FlatList,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { IMCStyles } from './style';
-import { AntDesign } from '@expo/vector-icons'
+import { AntDesign } from '@expo/vector-icons';
 
 export function IMCComponent() {
   const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList } =
