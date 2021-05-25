@@ -9,7 +9,7 @@ import {
 
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
-import { useThemeAwareObject } from '../../utils/ThemeAwareObject.hook';
+import { useThemeAwareObject } from '../../utils/useThemeAwareObject.hook';
 import { InputTextInfo } from '../InputTextInfo';
 import { FormStyles } from './style';
 

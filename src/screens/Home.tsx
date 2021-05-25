@@ -7,7 +7,7 @@ import { IMCComponent } from '../components/IMCComponent';
 import { IMCContext } from '../contexts/IMCContext';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { HomeStyles } from '../styles/screens/Home';
-import { useThemeAwareObject } from '../utils/ThemeAwareObject.hook';
+import { useThemeAwareObject } from '../utils/useThemeAwareObject.hook';
 
 export default function Home() {
   const { IMC } = useContext(IMCContext);

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Text, TextInput, View } from 'react-native';
 
 import { IMCContext } from '../../contexts/IMCContext';
-import { useThemeAwareObject } from '../../utils/ThemeAwareObject.hook';
+import { useThemeAwareObject } from '../../utils/useThemeAwareObject.hook';
 import { InputStyles } from './style';
 
 export function InputTextInfo() {

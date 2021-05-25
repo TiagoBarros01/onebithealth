@@ -6,7 +6,7 @@ import {
 
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
-import { useThemeAwareObject } from '../../utils/ThemeAwareObject.hook';
+import { useThemeAwareObject } from '../../utils/useThemeAwareObject.hook';
 import { IMCStyles } from './style';
 
 export function IMCComponent() {
@@ -41,7 +41,7 @@ export function IMCComponent() {
       >
         <Text style={StylesHome.TextBtn}>{TexBtn}</Text>
       </TouchableOpacity>
-      <Text style={Styles.TitleList}>Your last IMC's results</Text>
+      <Text style={Styles.TitleList}>Your last IMC&apos;s results</Text>
       <FlatList
         data={IMCList}
         style={Styles.ListOfIMCs}
