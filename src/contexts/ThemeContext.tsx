@@ -8,7 +8,7 @@ interface ThemeContextData {
 }
 
 interface Props {
-  initial: DefaultTheme;
+  theme: DefaultTheme;
   children?: React.ReactNode;
 }
 
@@ -19,31 +19,31 @@ const ThemeContext = createContext<ThemeContextData>({
   },
 });
 
-function ThemeContextProvider({ children, initial }: Props) {
+function ThemeContextProvider({ children }: Props) {
   const [theme, setTheme] = useState(light);
 
   const toggleTheme = useCallback(() => {
     setTheme((currentTheme) => {
-      if (currentTheme.title === light.title) {
-        return dark;
-      } else if (currentTheme.title === dark.title) {
-        return light;
-      }
+      currentTheme.title === light.title
+        ? dark
+        : currentTheme.title === dark.title
+        ? light
+        : currentTheme;
 
       return currentTheme;
     });
   }, []);
 
-  const MemoizedValue = useMemo(() => {
+  const memoizedValue = useMemo(() => {
     const value: ThemeContextData = {
       theme,
-      toggleTheme: toggleTheme,
+      toggleTheme,
     };
     return value;
   }, [theme, toggleTheme]);
 
   return (
-    <ThemeContext.Provider value={MemoizedValue}>
+    <ThemeContext.Provider value={memoizedValue}>
       {children}
     </ThemeContext.Provider>
   );

@@ -9,26 +9,26 @@ interface Props {
 interface IMCContextData {
   handleIMC: () => void;
   handleIMCAgain: () => void;
-  setWeight: () => number;
-  setHeight: () => number;
   onShare: () => void;
+  setWeight: number;
+  setHeight:number;
   weight: number;
   height: number;
   IMC: number;
   TexBtn: string;
   btnState: boolean;
-  IMCList: any[];
+  IMCList: Object[];
 }
 
 const IMCContext = createContext<IMCContextData>({} as IMCContextData);
 
 function IMCContextProvider({ children }: Props) {
-  const [weight, setWeight] = useState<number>(0);
-  const [height, setHeight] = useState<number>(0);
-  const [TexBtn, setTexBtn] = useState<string>('Calculate');
-  const [btnState, setBtnState] = useState<boolean>(true);
-  const [IMC, setIMC] = useState<number>(0);
-  const [IMCList, setIMCList] = useState<any[]>([]);
+  const [weight, setWeight] = useState(0);
+  const [height, setHeight] = useState(0);
+  const [TexBtn, setTexBtn] = useState('Calculate');
+  const [btnState, setBtnState] = useState(true);
+  const [IMC, setIMC] = useState(0);
+  const [IMCList, setIMCList] = useState<Object[]>([]);
 
   function handleIMC() {
     if (weight >= 30 && weight <= 200 && height >= 1 && height <= 2.2) {
@@ -67,7 +67,7 @@ function IMCContextProvider({ children }: Props) {
   }
 
   async function onShare() {
-    const res = await Share.share({
+    await Share.share({
       message: `Today my IMC is: ${IMC}`,
     });
   }
