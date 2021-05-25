@@ -38,21 +38,21 @@ function IMCContextProvider({ children }: Props) {
 
   const fadeAnim = useRef(new Animated.Value(1)).current;
 
-  const fadeIn = () => {
+  const fadeIn = useCallback(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 250,
       useNativeDriver: true,
     }).start();
-  };
+  }, [fadeAnim]);
 
-  const fadeOut = () => {
+  const fadeOut = useCallback(() => {
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: 250,
       useNativeDriver: true,
     }).start();
-  };
+  }, [fadeAnim]);
 
   const handleIMC = useCallback(() => {
     if (weight >= 30 && weight <= 200 && height >= 1 && height <= 2.2) {
