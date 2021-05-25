@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 
+import { AnimationContext } from '../../contexts/AnimationContext';
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { useThemeAwareObject } from '../../utils/useThemeAwareObject.hook';
@@ -16,8 +17,9 @@ import { FormStyles } from './style';
 
 export function Form() {
   const {
-    handleIMC, handleIMCAgain, TexBtn, btnState, fadeAnim,
+    handleIMC, handleIMCAgain, TexBtn, btnState,
   } = useContext(IMCContext);
+  const { fadeAnim } = useContext(AnimationContext);
 
   const Styles = useThemeAwareObject(FormStyles);
   const StylesHome = useThemeAwareObject(HomeStyles);

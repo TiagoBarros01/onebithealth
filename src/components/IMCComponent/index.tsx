@@ -5,6 +5,7 @@ import {
   FlatList, Text, TouchableOpacity, View,
 } from 'react-native';
 
+import { AnimationContext } from '../../contexts/AnimationContext';
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { useThemeAwareObject } from '../../utils/useThemeAwareObject.hook';
@@ -12,8 +13,10 @@ import { IMCStyles } from './style';
 
 export function IMCComponent() {
   const {
-    handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList, fadeAnim,
+    handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList,
   } = useContext(IMCContext);
+
+  const { fadeAnim } = useContext(AnimationContext);
 
   const Styles = useThemeAwareObject(IMCStyles);
   const StylesHome = useThemeAwareObject(HomeStyles);

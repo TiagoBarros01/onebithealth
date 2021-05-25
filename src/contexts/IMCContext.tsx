@@ -1,15 +1,13 @@
 import { format } from 'date-fns/esm';
 import { ptBR } from 'date-fns/locale';
 import React, {
-  createContext, useCallback, useMemo, useRef, useState,
+  createContext, useCallback, useContext, useMemo, useRef, useState,
 } from 'react';
 import {
-  Alert, Animated, Keyboard, Share, Vibration,
+  Alert, Keyboard, Share, Vibration,
 } from 'react-native';
 
-interface Props {
-  children: React.ReactNode;
-}
+import { AnimationContext } from './AnimationContext';
 
 interface IMCContextData {
   handleIMC: () => void;
@@ -23,36 +21,22 @@ interface IMCContextData {
   TexBtn: string;
   btnState: boolean;
   IMCList: any[];
-  fadeAnim: any;
+}
+interface Props {
+  children: React.ReactNode;
 }
 
 const IMCContext = createContext<IMCContextData>({} as IMCContextData);
 
 function IMCContextProvider({ children }: Props) {
+  const { fadeIn, fadeOut } = useContext(AnimationContext);
+
   const [weight, setWeight] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
   const [TexBtn, setTexBtn] = useState<string>('Calculate');
   const [btnState, setBtnState] = useState<boolean>(true);
   const [IMC, setIMC] = useState<number>(0);
   const [IMCList, setIMCList] = useState<any[]>([]);
-
-  const fadeAnim = useRef(new Animated.Value(1)).current;
-
-  const fadeIn = useCallback(() => {
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 250,
-      useNativeDriver: true,
-    }).start();
-  }, [fadeAnim]);
-
-  const fadeOut = useCallback(() => {
-    Animated.timing(fadeAnim, {
-      toValue: 0,
-      duration: 250,
-      useNativeDriver: true,
-    }).start();
-  }, [fadeAnim]);
 
   const handleIMC = useCallback(() => {
     if (weight >= 30 && weight <= 200 && height >= 1 && height <= 2.2) {
@@ -115,7 +99,6 @@ function IMCContextProvider({ children }: Props) {
       TexBtn,
       btnState,
       IMCList,
-      fadeAnim,
     };
     return value;
   }, [
@@ -130,7 +113,6 @@ function IMCContextProvider({ children }: Props) {
     TexBtn,
     btnState,
     IMCList,
-    fadeAnim,
   ]);
 
   return (
