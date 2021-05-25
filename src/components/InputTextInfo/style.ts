@@ -18,6 +18,7 @@ export const InputStyles = (theme: DefaultTheme) => {
     Input: {
       backgroundColor: theme.colors.inputColor,
       height: 45,
+      color: theme.colors.textColor,
 
       marginTop: 15,
       paddingLeft: 10,

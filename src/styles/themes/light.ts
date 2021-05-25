@@ -5,11 +5,14 @@ export default {
     background: '#e0e5e5',
     textColor: '#222',
     inputColor: '#f6f6f6',
+    erasedText: '#a9a9a9',
 
-    lightBackground: '#e9e9e9',
-    listBackground: '#f9f9f9',
+    scndBackground: '#fff',
+    listBackground: '#e9e9e9',
+    darkBackground: '#444',
 
     red: '#ff0043',
     white: '#fff',
+    black: '#111',
   },
 };

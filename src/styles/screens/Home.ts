@@ -24,7 +24,7 @@ export const HomeStyles = (theme: DefaultTheme) => {
       flex: 1,
       width: '100%',
 
-      backgroundColor: theme.colors.white,
+      backgroundColor: theme.colors.scndBackground,
 
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,

@@ -3,11 +3,14 @@ export interface DefaultTheme {
 
   colors: {
     background: string;
-    textColor: string;
     inputColor: string;
-    lightBackground: string;
+    textColor: string;
+    erasedText: string,
+    scndBackground: string;
+    darkBackground: string;
     listBackground: string;
     red: string;
     white: string;
+    black: string;
   };
 }

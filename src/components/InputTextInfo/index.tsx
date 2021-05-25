@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Text, TextInput, View } from 'react-native';
 
 import { IMCContext } from '../../contexts/IMCContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { useThemeAwareObject } from '../../utils/useThemeAwareObject.hook';
 import { InputStyles } from './style';
 
@@ -9,6 +10,7 @@ export function InputTextInfo() {
   const {
     setHeight, setWeight, height, weight,
   } = useContext(IMCContext);
+  const { theme } = useContext(ThemeContext);
 
   const Styles = useThemeAwareObject(InputStyles);
 
@@ -19,6 +21,7 @@ export function InputTextInfo() {
         <TextInput
           style={Styles.Input}
           placeholder="Ex. 1.75"
+          placeholderTextColor={theme.colors.erasedText}
           keyboardType="numeric"
           onChangeText={setHeight}
           value={height === 0 ? '' : height.toString().replace(',', '.')}
@@ -30,6 +33,7 @@ export function InputTextInfo() {
         <TextInput
           style={Styles.Input}
           placeholder="Ex. 74.70"
+          placeholderTextColor={theme.colors.erasedText}
           keyboardType="numeric"
           onChangeText={setWeight}
           value={weight === 0 ? '' : weight.toString().replace(',', '.')}

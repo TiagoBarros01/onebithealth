@@ -16,6 +16,7 @@ export const IMCStyles = (theme: DefaultTheme) => {
       marginBottom: 25,
     },
     TextIMC: {
+      color: theme.colors.textColor,
       fontSize: 24,
       textAlign: 'center',
     },
@@ -42,13 +43,13 @@ export const IMCStyles = (theme: DefaultTheme) => {
       fontSize: 16,
     },
     TitleList: {
+      color: theme.colors.textColor,
       marginTop: 20,
       fontSize: 22,
     },
     ListOfIMCs: {
       marginTop: 20,
       width: '100%',
-      backgroundColor: theme.colors.listBackground,
       borderRadius: 15,
     },
     ListIMCContainer: {
@@ -62,9 +63,10 @@ export const IMCStyles = (theme: DefaultTheme) => {
 
       marginTop: 5,
 
-      backgroundColor: theme.colors.lightBackground,
+      backgroundColor: theme.colors.listBackground,
     },
     ListIMCDate: {
+      color: theme.colors.textColor,
       fontSize: 14,
     },
     ListIMCItem: {

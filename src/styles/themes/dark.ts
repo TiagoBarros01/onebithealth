@@ -2,14 +2,18 @@ export default {
   title: 'dark',
 
   colors: {
-    background: '#111',
-    textColor: '#eee',
-    inputColor: '#f6f6f6',
+    background: '#222',
+    inputColor: '#555',
 
-    lightBackground: '#e9e9e9',
-    listBackground: '#f9f9f9',
+    textColor: '#f9f9f9',
+    erasedText: '#999',
 
-    red: 'blue',
-    white: '#000',
+    scndBackground: '#333',
+    listBackground: '#444',
+    darkBackground: '#555',
+
+    red: '#ff0043',
+    white: '#fff',
+    black: '#111',
   },
 };
