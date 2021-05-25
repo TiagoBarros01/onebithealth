@@ -22,6 +22,7 @@ export function InputTextInfo() {
           style={Styles.Input}
           placeholder="Ex. 1.75"
           placeholderTextColor={theme.colors.erasedText}
+          keyboardAppearance={theme.title === 'light' ? 'light' : 'dark'}
           keyboardType="numeric"
           onChangeText={setHeight}
           value={height === 0 ? '' : height.toString().replace(',', '.')}
@@ -34,6 +35,7 @@ export function InputTextInfo() {
           style={Styles.Input}
           placeholder="Ex. 74.70"
           placeholderTextColor={theme.colors.erasedText}
+          keyboardAppearance={theme.title === 'light' ? 'light' : 'dark'}
           keyboardType="numeric"
           onChangeText={setWeight}
           value={weight === 0 ? '' : weight.toString().replace(',', '.')}
