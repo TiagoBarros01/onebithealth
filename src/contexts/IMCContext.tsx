@@ -12,8 +12,8 @@ import { AnimationContext } from './AnimationContext';
 interface IMCContextData {
   handleIMC: () => void;
   handleIMCAgain: () => void;
-  setWeight: () => number;
-  setHeight: () => number;
+  setWeight: (value: number) => void;
+  setHeight: (value: number) => void;
   onShare: () => void;
   weight: number;
   height: number;

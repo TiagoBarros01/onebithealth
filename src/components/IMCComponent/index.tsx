@@ -1,8 +1,7 @@
 import { AntDesign } from '@expo/vector-icons';
 import React, { useContext } from 'react';
 import {
-  Animated,
-  FlatList, Text, TouchableOpacity, View,
+  Animated, FlatList, Text, TouchableOpacity, View,
 } from 'react-native';
 
 import { AnimationContext } from '../../contexts/AnimationContext';
