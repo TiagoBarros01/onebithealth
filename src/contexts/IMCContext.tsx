@@ -100,7 +100,7 @@ function IMCContextProvider({ children }: Props) {
     await Share.share({
       message: `Today my IMC is: ${IMC}`,
     });
-  }, []);
+  }, [IMC]);
 
   const memoizedValue = useMemo(() => {
     const value: IMCContextData = {
