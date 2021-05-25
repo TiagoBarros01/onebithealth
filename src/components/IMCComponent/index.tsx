@@ -45,7 +45,7 @@ export function IMCComponent() {
       <FlatList
         data={IMCList}
         style={Styles.ListOfIMCs}
-        keyExtractor={(item: any) => item.id}
+        keyExtractor={(item: any) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={Styles.ListIMCContainer}>
             <Text style={Styles.ListIMCDate}>{item.date}</Text>
