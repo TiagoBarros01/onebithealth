@@ -1,6 +1,8 @@
 import { FontAwesome5 } from '@expo/vector-icons';
 import React, { useContext } from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
+import {
+  SafeAreaView, Text, View,
+} from 'react-native';
 
 import { Form } from '../components/Form';
 import { IMCComponent } from '../components/IMCComponent';

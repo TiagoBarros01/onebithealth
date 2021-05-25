@@ -1,10 +1,10 @@
 import { format } from 'date-fns/esm';
 import { ptBR } from 'date-fns/locale';
 import React, {
-  createContext, useCallback, useMemo, useState,
+  createContext, useCallback, useMemo, useRef, useState,
 } from 'react';
 import {
-  Alert, Keyboard, Share, Vibration,
+  Alert, Animated, Keyboard, Share, Vibration,
 } from 'react-native';
 
 interface Props {
@@ -23,6 +23,7 @@ interface IMCContextData {
   TexBtn: string;
   btnState: boolean;
   IMCList: any[];
+  fadeAnim: any;
 }
 
 const IMCContext = createContext<IMCContextData>({} as IMCContextData);
@@ -35,8 +36,27 @@ function IMCContextProvider({ children }: Props) {
   const [IMC, setIMC] = useState<number>(0);
   const [IMCList, setIMCList] = useState<any[]>([]);
 
+  const fadeAnim = useRef(new Animated.Value(1)).current;
+
+  const fadeIn = () => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 250,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const fadeOut = () => {
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 250,
+      useNativeDriver: true,
+    }).start();
+  };
+
   const handleIMC = useCallback(() => {
     if (weight >= 30 && weight <= 200 && height >= 1 && height <= 2.2) {
+      fadeOut();
       const totalIMC = Number((weight / (height * height)).toFixed(2));
       setIMCList((arr) => [
         ...arr,
@@ -46,10 +66,13 @@ function IMCContextProvider({ children }: Props) {
           imc: totalIMC,
         },
       ].reverse());
-      setIMC(totalIMC);
+      setTimeout(() => {
+        fadeIn();
+        setIMC(totalIMC);
+        setBtnState(false);
+        setTexBtn('Calculate again');
+      }, 250);
 
-      setBtnState(false);
-      setTexBtn('Calculate again');
       Keyboard.dismiss();
     } else if (weight === 0 && height === 0) {
       Alert.alert('Insert the datas on the fields 😅');
@@ -62,11 +85,15 @@ function IMCContextProvider({ children }: Props) {
   }, [weight, height, IMC, btnState, TexBtn, IMCList]);
 
   const handleIMCAgain = useCallback(() => {
-    setBtnState(true);
-    setTexBtn('Calculate');
-    setWeight(0);
-    setHeight(0);
-    setIMC(0);
+    fadeOut();
+    setTimeout(() => {
+      fadeIn();
+      setBtnState(true);
+      setTexBtn('Calculate');
+      setWeight(0);
+      setHeight(0);
+      setIMC(0);
+    }, 250);
   }, [weight, height, IMC, btnState, TexBtn]);
 
   const onShare = useCallback(async () => {
@@ -88,6 +115,7 @@ function IMCContextProvider({ children }: Props) {
       TexBtn,
       btnState,
       IMCList,
+      fadeAnim,
     };
     return value;
   }, [
@@ -102,6 +130,7 @@ function IMCContextProvider({ children }: Props) {
     TexBtn,
     btnState,
     IMCList,
+    fadeAnim,
   ]);
 
   return (

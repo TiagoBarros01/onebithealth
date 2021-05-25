@@ -1,6 +1,7 @@
 import { AntDesign } from '@expo/vector-icons';
 import React, { useContext } from 'react';
 import {
+  Animated,
   FlatList, Text, TouchableOpacity, View,
 } from 'react-native';
 
@@ -11,14 +12,14 @@ import { IMCStyles } from './style';
 
 export function IMCComponent() {
   const {
-    handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList,
+    handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList, fadeAnim,
   } = useContext(IMCContext);
 
   const Styles = useThemeAwareObject(IMCStyles);
   const StylesHome = useThemeAwareObject(HomeStyles);
 
   return (
-    <View style={Styles.IMCContainer}>
+    <Animated.View style={[Styles.IMCContainer, { opacity: fadeAnim }]}>
       <View style={Styles.ResultIMCContainer}>
         <View>
           <Text style={Styles.TextIMC}>Your IMC is:</Text>
@@ -54,6 +55,6 @@ export function IMCComponent() {
         )}
         showsVerticalScrollIndicator={false}
       />
-    </View>
+    </Animated.View>
   );
 }
