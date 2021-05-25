@@ -1,9 +1,10 @@
+import { FontAwesome5 } from '@expo/vector-icons';
 import React, { useContext } from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
+
 import { Form } from '../components/Form';
 import { IMCComponent } from '../components/IMCComponent';
 import { IMCContext } from '../contexts/IMCContext';
-import { FontAwesome5 } from '@expo/vector-icons';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { HomeStyles } from '../styles/screens/Home';
 import { useThemeAwareObject } from '../utils/ThemeAwareObject.hook';
@@ -18,7 +19,8 @@ export default function Home() {
     <SafeAreaView style={Styles.Area}>
       <View style={Styles.Title}>
         <Text onPress={toggleTheme} style={Styles.Text}>
-          ONEBITHEALTH{' '}
+          ONEBITHEALTH
+          {' '}
           <FontAwesome5 name="heartbeat" size={24} color={theme.colors.red} />
         </Text>
       </View>

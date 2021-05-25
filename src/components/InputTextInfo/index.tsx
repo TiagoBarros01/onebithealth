@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { Text, TextInput, View } from 'react-native';
+
 import { IMCContext } from '../../contexts/IMCContext';
 import { useThemeAwareObject } from '../../utils/ThemeAwareObject.hook';
 import { InputStyles } from './style';
 
 export function InputTextInfo() {
-  const { setHeight, setWeight, height, weight } = useContext(IMCContext);
+  const {
+    setHeight, setWeight, height, weight,
+  } = useContext(IMCContext);
 
   const Styles = useThemeAwareObject(InputStyles);
 

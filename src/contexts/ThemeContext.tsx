@@ -1,7 +1,12 @@
-import React, { createContext, useCallback, useMemo, useState } from 'react';
-import { DefaultTheme } from '../styles/themes/styled';
+/* eslint-disable react/no-unused-prop-types */
+import React, {
+  createContext, useCallback, useMemo, useState,
+} from 'react';
+
 import dark from '../styles/themes/dark';
 import light from '../styles/themes/light';
+import { DefaultTheme } from '../styles/themes/styled';
+
 interface ThemeContextData {
   theme: DefaultTheme;
   toggleTheme: () => void;
@@ -9,13 +14,13 @@ interface ThemeContextData {
 
 interface Props {
   theme: DefaultTheme;
-  children?: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const ThemeContext = createContext<ThemeContextData>({
   theme: light,
   toggleTheme: () => {
-    console.log(`ThemeProvider isn't rendered 😞`);
+    console.log("ThemeProvider isn't rendered 😞");
   },
 });
 
@@ -24,12 +29,11 @@ function ThemeContextProvider({ children }: Props) {
 
   const toggleTheme = useCallback(() => {
     setTheme((currentTheme) => {
-      currentTheme.title === light.title
-        ? dark
-        : currentTheme.title === dark.title
-        ? light
-        : currentTheme;
-
+      if (currentTheme.title === light.title) {
+        return dark;
+      } if (currentTheme.title === dark.title) {
+        return light;
+      }
       return currentTheme;
     });
   }, []);

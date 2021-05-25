@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { DefaultTheme } from '../themes/styled';
 
 export const HomeStyles = (theme: DefaultTheme) => {

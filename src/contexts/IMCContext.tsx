@@ -1,48 +1,51 @@
 import { format } from 'date-fns/esm';
 import { ptBR } from 'date-fns/locale';
-import React, { createContext, useState } from 'react';
-import { Alert, Keyboard, Share, Vibration } from 'react-native';
+import React, {
+  createContext, useCallback, useMemo, useState,
+} from 'react';
+import {
+  Alert, Keyboard, Share, Vibration,
+} from 'react-native';
 
 interface Props {
   children: React.ReactNode;
 }
+
 interface IMCContextData {
   handleIMC: () => void;
   handleIMCAgain: () => void;
+  setWeight: () => number;
+  setHeight: () => number;
   onShare: () => void;
-  setWeight: number;
-  setHeight:number;
   weight: number;
   height: number;
   IMC: number;
   TexBtn: string;
   btnState: boolean;
-  IMCList: Object[];
+  IMCList: any[];
 }
 
 const IMCContext = createContext<IMCContextData>({} as IMCContextData);
 
 function IMCContextProvider({ children }: Props) {
-  const [weight, setWeight] = useState(0);
-  const [height, setHeight] = useState(0);
-  const [TexBtn, setTexBtn] = useState('Calculate');
-  const [btnState, setBtnState] = useState(true);
-  const [IMC, setIMC] = useState(0);
-  const [IMCList, setIMCList] = useState<Object[]>([]);
+  const [weight, setWeight] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
+  const [TexBtn, setTexBtn] = useState<string>('Calculate');
+  const [btnState, setBtnState] = useState<boolean>(true);
+  const [IMC, setIMC] = useState<number>(0);
+  const [IMCList, setIMCList] = useState<any[]>([]);
 
-  function handleIMC() {
+  const handleIMC = useCallback(() => {
     if (weight >= 30 && weight <= 200 && height >= 1 && height <= 2.2) {
-      let totalIMC = Number((weight / (height * height)).toFixed(2));
-      setIMCList((arr) =>
-        [
-          ...arr,
-          {
-            date: format(new Date(), 'EEEEEE, d MMM', { locale: ptBR }),
-            id: new Date().getTime(),
-            imc: totalIMC,
-          },
-        ].reverse()
-      );
+      const totalIMC = Number((weight / (height * height)).toFixed(2));
+      setIMCList((arr) => [
+        ...arr,
+        {
+          date: format(new Date(), 'EEEEEE, d MMM', { locale: ptBR }),
+          id: new Date().getTime(),
+          imc: totalIMC,
+        },
+      ].reverse());
       setIMC(totalIMC);
 
       setBtnState(false);
@@ -53,43 +56,56 @@ function IMCContextProvider({ children }: Props) {
       Vibration.vibrate();
     } else {
       Alert.alert(
-        'Weight data must be greater than 30 and Height must be greater than 1.00❗'
+        'Weight data must be greater than 30 and Height must be greater than 1.00❗',
       );
     }
-  }
+  }, [weight, height, IMC, btnState, TexBtn, IMCList]);
 
-  function handleIMCAgain() {
+  const handleIMCAgain = useCallback(() => {
     setBtnState(true);
     setTexBtn('Calculate');
     setWeight(0);
     setHeight(0);
     setIMC(0);
-  }
+  }, [weight, height, IMC, btnState, TexBtn]);
 
-  async function onShare() {
+  const onShare = useCallback(async () => {
     await Share.share({
       message: `Today my IMC is: ${IMC}`,
     });
-  }
+  }, []);
+
+  const memoizedValue = useMemo(() => {
+    const value: IMCContextData = {
+      handleIMC,
+      handleIMCAgain,
+      onShare,
+      setWeight,
+      setHeight,
+      weight,
+      height,
+      IMC,
+      TexBtn,
+      btnState,
+      IMCList,
+    };
+    return value;
+  }, [
+    handleIMC,
+    handleIMCAgain,
+    onShare,
+    setWeight,
+    setHeight,
+    weight,
+    height,
+    IMC,
+    TexBtn,
+    btnState,
+    IMCList,
+  ]);
 
   return (
-    <IMCContext.Provider
-      value={{
-        handleIMC,
-        handleIMCAgain,
-        onShare,
-        setWeight,
-        setHeight,
-        weight,
-        height,
-        IMC,
-        TexBtn,
-        btnState,
-        IMCList,
-      }}
-    >
-      {children}
-    </IMCContext.Provider>
+    <IMCContext.Provider value={memoizedValue}>{children}</IMCContext.Provider>
   );
 }
 

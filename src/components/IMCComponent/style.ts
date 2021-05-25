@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { DefaultTheme } from '../../styles/themes/styled';
 
 export const IMCStyles = (theme: DefaultTheme) => {

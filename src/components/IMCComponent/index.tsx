@@ -1,15 +1,18 @@
+import { AntDesign } from '@expo/vector-icons';
 import React, { useContext } from 'react';
-import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import {
+  FlatList, Text, TouchableOpacity, View,
+} from 'react-native';
+
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
-import { IMCStyles } from './style';
-import { AntDesign } from '@expo/vector-icons';
-import { ThemeContext } from '../../contexts/ThemeContext';
 import { useThemeAwareObject } from '../../utils/ThemeAwareObject.hook';
+import { IMCStyles } from './style';
 
 export function IMCComponent() {
-  const { handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList } =
-    useContext(IMCContext);
+  const {
+    handleIMC, IMC, handleIMCAgain, TexBtn, btnState, onShare, IMCList,
+  } = useContext(IMCContext);
 
   const Styles = useThemeAwareObject(IMCStyles);
   const StylesHome = useThemeAwareObject(HomeStyles);
@@ -43,14 +46,12 @@ export function IMCComponent() {
         data={IMCList}
         style={Styles.ListOfIMCs}
         keyExtractor={(item: any) => item.id}
-        renderItem={({ item }) => {
-          return (
-            <View style={Styles.ListIMCContainer}>
-              <Text style={Styles.ListIMCDate}>{item.date}</Text>
-              <Text style={Styles.ListIMCItem}>{item.imc}</Text>
-            </View>
-          );
-        }}
+        renderItem={({ item }) => (
+          <View style={Styles.ListIMCContainer}>
+            <Text style={Styles.ListIMCDate}>{item.date}</Text>
+            <Text style={Styles.ListIMCItem}>{item.imc}</Text>
+          </View>
+        )}
         showsVerticalScrollIndicator={false}
       />
     </View>

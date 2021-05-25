@@ -1,6 +1,6 @@
 import React from 'react';
-import light from '../styles/themes/light';
 
+import light from '../styles/themes/light';
 import { IMCContextProvider } from './IMCContext';
 import { ThemeContextProvider } from './ThemeContext';
 

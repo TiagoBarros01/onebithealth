@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { useThemeAwareObject } from '../../utils/ThemeAwareObject.hook';
@@ -13,8 +14,9 @@ import { InputTextInfo } from '../InputTextInfo';
 import { FormStyles } from './style';
 
 export function Form() {
-  const { handleIMC, handleIMCAgain, TexBtn, btnState } =
-    useContext(IMCContext);
+  const {
+    handleIMC, handleIMCAgain, TexBtn, btnState,
+  } = useContext(IMCContext);
 
   const Styles = useThemeAwareObject(FormStyles);
   const StylesHome = useThemeAwareObject(HomeStyles);
