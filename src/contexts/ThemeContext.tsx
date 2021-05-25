@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unused-prop-types */
+/* eslint-disable no-nested-ternary */
 import React, {
   createContext, useCallback, useMemo, useState,
 } from 'react';
@@ -13,7 +13,7 @@ interface ThemeContextData {
 }
 
 interface Props {
-  theme: DefaultTheme;
+  currentTheme: DefaultTheme;
   children: React.ReactNode;
 }
 
@@ -24,18 +24,16 @@ const ThemeContext = createContext<ThemeContextData>({
   },
 });
 
-function ThemeContextProvider({ children }: Props) {
-  const [theme, setTheme] = useState(light);
+function ThemeContextProvider({ children, currentTheme }: Props) {
+  const [theme, setTheme] = useState<typeof currentTheme>(light);
 
   const toggleTheme = useCallback(() => {
-    setTheme((currentTheme) => {
-      if (currentTheme.title === light.title) {
-        return dark;
-      } if (currentTheme.title === dark.title) {
-        return light;
-      }
-      return currentTheme;
-    });
+    setTheme(({ title }) => (
+      title === light.title
+        ? dark
+        : title === dark.title
+          ? light
+          : currentTheme));
   }, []);
 
   const memoizedValue = useMemo(() => {
