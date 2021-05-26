@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View, Text } from 'react-native';
 
+import { IMCFlatList } from '../components/IMCFlatList';
 import { IMCHistoryStyles } from '../styles/screens/IMCHistory';
 import { useThemeAwareObject } from '../utils/useThemeAwareObject.hook';
 
@@ -13,7 +14,7 @@ export default function IMCHistory() {
         <Text style={Styles.Title}>List of my IMC&apos;s</Text>
       </View>
       <View style={Styles.Main}>
-        <Text>List</Text>
+        <IMCFlatList />
       </View>
     </SafeAreaView>
   );
