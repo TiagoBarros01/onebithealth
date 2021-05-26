@@ -19,8 +19,8 @@ export function IMCFlatList() {
       <FlatList
         data={IMCList}
         style={Styles.ListOfIMCs}
-        keyExtractor={(item: any) => item.id.toString()}
-        renderItem={({ item }) => (
+        keyExtractor={(item: any) => item.id}
+        renderItem={({ item, index }) => (
           <Swipeable
             overshootRight={false}
             renderRightActions={() => (
@@ -34,7 +34,7 @@ export function IMCFlatList() {
             )}
           >
             <View style={Styles.ListIMCContainer}>
-              <Text style={Styles.ListIMCDate}>{item.id}</Text>
+              <Text style={Styles.ListIMCDate}>{index + 1}</Text>
               <Text style={Styles.ListIMCDate}>{item.date}</Text>
               <Text style={Styles.ListIMCItem}>{item.imc}</Text>
             </View>

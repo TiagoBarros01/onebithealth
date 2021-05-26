@@ -52,7 +52,7 @@ function IMCContextProvider({ children }: Props) {
         ...arr,
         {
           date: format(new Date(), 'EEEEEE, d MMM', { locale: enUS }),
-          id: IMCId,
+          id: IMCId.toString(),
           imc: totalIMC,
         },
       ].reverse());
