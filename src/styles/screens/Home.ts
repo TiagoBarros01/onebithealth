@@ -12,6 +12,7 @@ export const HomeStyles = (theme: DefaultTheme) => {
     },
     Title: {
       height: 130,
+      flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -44,6 +45,19 @@ export const HomeStyles = (theme: DefaultTheme) => {
       color: theme.colors.white,
       fontWeight: 'bold',
       fontSize: 14,
+    },
+    toggleTheme: {
+      backgroundColor: theme.colors.listBackground,
+      width: 40,
+      height: 40,
+      borderRadius: 20,
+
+      position: 'absolute',
+      top: 10,
+      right: 10,
+
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   });
   return styles;
