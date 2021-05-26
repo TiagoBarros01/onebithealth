@@ -18,14 +18,14 @@ interface Props {
 }
 
 const ThemeContext = createContext<ThemeContextData>({
-  theme: light,
+  theme: dark,
   toggleTheme: () => {
     console.log("ThemeProvider isn't rendered 😞");
   },
 });
 
 function ThemeContextProvider({ children, currentTheme }: Props) {
-  const [theme, setTheme] = useState<typeof currentTheme>(light);
+  const [theme, setTheme] = useState(dark);
 
   const toggleTheme = useCallback(() => {
     setTheme(({ title }) => (

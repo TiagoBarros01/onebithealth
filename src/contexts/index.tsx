@@ -1,5 +1,6 @@
 import React from 'react';
 
+import dark from '../styles/themes/dark';
 import light from '../styles/themes/light';
 import { AnimationContextProvider } from './AnimationContext';
 import { IMCContextProvider } from './IMCContext';
@@ -11,7 +12,7 @@ interface Props {
 
 export default function ContextProvider({ children }: Props) {
   return (
-    <ThemeContextProvider currentTheme={light}>
+    <ThemeContextProvider currentTheme={dark}>
       <AnimationContextProvider>
         <IMCContextProvider>{children}</IMCContextProvider>
       </AnimationContextProvider>
