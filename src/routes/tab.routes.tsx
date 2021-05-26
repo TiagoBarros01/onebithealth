@@ -26,7 +26,8 @@ function AuthRoutes() {
         labelPosition: 'beside-icon',
         style: {
           height: 55,
-          borderTopWidth: 0,
+          borderTopWidth: 1,
+          borderTopColor: theme.colors.background,
         },
       }}
     >
