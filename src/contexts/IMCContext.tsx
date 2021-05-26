@@ -55,7 +55,7 @@ function IMCContextProvider({ children }: Props) {
           id: IMCId.toString(),
           imc: totalIMC,
         },
-      ].reverse());
+      ]);
       setTimeout(() => {
         fadeIn();
         setIMC(totalIMC);

@@ -17,19 +17,17 @@ export function IMCFlatList() {
   return (
     <>
       <FlatList
-        data={IMCList}
+        data={IMCList.reverse()}
         style={Styles.ListOfIMCs}
         keyExtractor={(item: any) => item.id}
         renderItem={({ item, index }) => (
           <Swipeable
             overshootRight={false}
             renderRightActions={() => (
-              <View>
-                <View style={Styles.btnRemoveContainer}>
-                  <RectButton style={Styles.btnRemove}>
-                    <Feather name="trash" size={16} color={theme.colors.scndBackground} />
-                  </RectButton>
-                </View>
+              <View style={Styles.btnRemoveContainer}>
+                <RectButton style={Styles.btnRemove}>
+                  <Feather name="trash" size={16} color={theme.colors.scndBackground} />
+                </RectButton>
               </View>
             )}
           >
