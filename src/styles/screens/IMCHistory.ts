@@ -30,6 +30,16 @@ export const IMCHistoryStyles = (theme: DefaultTheme) => {
       borderTopRightRadius: 30,
       padding: 30,
     },
+    TopBarList: {
+      width: '100%',
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+    },
+    TopBarListText: {
+      fontSize: 16,
+      color: theme.colors.erasedText,
+      fontWeight: 'bold',
+    },
   });
   return styles;
 };

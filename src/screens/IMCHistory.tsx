@@ -14,6 +14,11 @@ export default function IMCHistory() {
         <Text style={Styles.Title}>List of my IMC&apos;s</Text>
       </View>
       <View style={Styles.Main}>
+        <View style={Styles.TopBarList}>
+          <Text style={Styles.TopBarListText}>ID</Text>
+          <Text style={[Styles.TopBarListText, { marginRight: 15 }]}>Date</Text>
+          <Text style={Styles.TopBarListText}>Value</Text>
+        </View>
         <IMCFlatList />
       </View>
     </SafeAreaView>
