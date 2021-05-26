@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 
 import { ThemeContext } from '../contexts/ThemeContext';
 import Home from '../screens/Home';
+import IMCHistory from '../screens/IMCHistory';
 
 interface tabBarIconProps {
   size: number;
@@ -19,14 +20,13 @@ function AuthRoutes() {
     <AppTab.Navigator
       tabBarOptions={{
         activeTintColor: theme.colors.red,
-        // inactiveTintColor: verifyTheme ? light.colors.heading : dark.colors.heading,
+        inactiveTintColor: theme.colors.erasedText,
         inactiveBackgroundColor: theme.colors.scndBackground,
         activeBackgroundColor: theme.colors.background,
         labelPosition: 'beside-icon',
         style: {
-          height: 60,
-          borderWidth: 1,
-          borderTopColor: theme.colors.scndBackground,
+          height: 55,
+          borderTopWidth: 0,
         },
       }}
     >
@@ -35,7 +35,16 @@ function AuthRoutes() {
         component={Home}
         options={{
           tabBarIcon: (({ size, color }: tabBarIconProps) => (
-            <MaterialIcons name="add-circle-outline" size={size} color={color} />
+            <MaterialIcons name="home" size={size} color={color} />
+          )),
+        }}
+      />
+      <AppTab.Screen
+        name="List"
+        component={IMCHistory}
+        options={{
+          tabBarIcon: (({ size, color }: tabBarIconProps) => (
+            <MaterialIcons name="format-list-bulleted" size={size} color={color} />
           )),
         }}
       />
