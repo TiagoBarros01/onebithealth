@@ -1,11 +1,19 @@
 import React from 'react';
 import { SafeAreaView, View, Text } from 'react-native';
 
+import { IMCHistoryStyles } from '../styles/screens/IMCHistory';
+import { useThemeAwareObject } from '../utils/useThemeAwareObject.hook';
+
 export default function IMCHistory() {
+  const Styles = useThemeAwareObject(IMCHistoryStyles);
+
   return (
-    <SafeAreaView>
-      <View>
-        <Text>History</Text>
+    <SafeAreaView style={Styles.Wrapper}>
+      <View style={Styles.TitleContainer}>
+        <Text style={Styles.Title}>List of my IMC&apos;s</Text>
+      </View>
+      <View style={Styles.Main}>
+        <Text>List</Text>
       </View>
     </SafeAreaView>
   );
