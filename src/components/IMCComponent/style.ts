@@ -47,34 +47,6 @@ export const IMCStyles = (theme: DefaultTheme) => {
       marginTop: 20,
       fontSize: 22,
     },
-    ListOfIMCs: {
-      marginTop: 20,
-      width: '100%',
-      borderRadius: 15,
-    },
-    ListIMCContainer: {
-      width: '100%',
-      height: 45,
-
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-around',
-      borderRadius: 15,
-
-      marginTop: 5,
-
-      backgroundColor: theme.colors.listBackground,
-    },
-    ListIMCDate: {
-      color: theme.colors.textColor,
-      fontSize: 14,
-    },
-    ListIMCItem: {
-      color: theme.colors.red,
-      fontSize: 20,
-      fontWeight: 'bold',
-      letterSpacing: 0.5,
-    },
   });
   return Styles;
 };

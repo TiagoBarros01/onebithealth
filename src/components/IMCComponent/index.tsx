@@ -1,13 +1,14 @@
 import { AntDesign } from '@expo/vector-icons';
 import React, { useContext } from 'react';
 import {
-  Animated, FlatList, Text, TouchableOpacity, View,
+  Animated, Text, TouchableOpacity, View,
 } from 'react-native';
 
 import { AnimationContext } from '../../contexts/AnimationContext';
 import { IMCContext } from '../../contexts/IMCContext';
 import { HomeStyles } from '../../styles/screens/Home';
 import { useThemeAwareObject } from '../../utils/useThemeAwareObject.hook';
+import { IMCFlatList } from '../IMCFlatList';
 import { IMCStyles } from './style';
 
 export function IMCComponent() {
@@ -45,19 +46,7 @@ export function IMCComponent() {
         <Text style={StylesHome.TextBtn}>{TexBtn}</Text>
       </TouchableOpacity>
       <Text style={Styles.TitleList}>Your last IMC&apos;s results</Text>
-      <FlatList
-        data={IMCList}
-        style={Styles.ListOfIMCs}
-        keyExtractor={(item: any) => item.id.toString()}
-        renderItem={({ item }) => (
-          <View style={Styles.ListIMCContainer}>
-            <Text style={Styles.ListIMCDate}>{`${item.id}॰`}</Text>
-            <Text style={Styles.ListIMCDate}>{item.date}</Text>
-            <Text style={Styles.ListIMCItem}>{item.imc}</Text>
-          </View>
-        )}
-        showsVerticalScrollIndicator={false}
-      />
+      <IMCFlatList />
     </Animated.View>
   );
 }
