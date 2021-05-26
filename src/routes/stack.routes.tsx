@@ -2,7 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React, { useContext } from 'react';
 
 import { ThemeContext } from '../contexts/ThemeContext';
-import Home from '../screens/Home';
+import AuthRoutes from './tab.routes';
 
 const stackRoutes = createStackNavigator();
 
@@ -18,7 +18,7 @@ function AppRoutes() {
         },
       }}
     >
-      <stackRoutes.Screen name="Home" component={Home} />
+      <stackRoutes.Screen name="Home" component={AuthRoutes} />
     </stackRoutes.Navigator>
   );
 }
