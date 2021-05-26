@@ -1,12 +1,15 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 
 import ContextProvider from './src/contexts';
-import Home from './src/screens/Home';
+import Routes from './src/routes';
 
 export default function App() {
   return (
-    <ContextProvider>
-      <Home />
-    </ContextProvider>
+    <NavigationContainer>
+      <ContextProvider>
+        <Routes />
+      </ContextProvider>
+    </NavigationContainer>
   );
 }
