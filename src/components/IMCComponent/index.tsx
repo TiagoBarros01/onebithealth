@@ -51,6 +51,7 @@ export function IMCComponent() {
         keyExtractor={(item: any) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={Styles.ListIMCContainer}>
+            <Text style={Styles.ListIMCDate}>{`${item.id}॰`}</Text>
             <Text style={Styles.ListIMCDate}>{item.date}</Text>
             <Text style={Styles.ListIMCItem}>{item.imc}</Text>
           </View>

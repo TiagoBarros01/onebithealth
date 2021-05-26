@@ -1,5 +1,5 @@
 import { format } from 'date-fns/esm';
-import { ptBR } from 'date-fns/locale';
+import { enUS } from 'date-fns/locale';
 import React, {
   createContext, useCallback, useContext, useMemo, useRef, useState,
 } from 'react';
@@ -37,16 +37,22 @@ function IMCContextProvider({ children }: Props) {
   const [btnState, setBtnState] = useState<boolean>(true);
   const [IMC, setIMC] = useState<number>(0);
   const [IMCList, setIMCList] = useState<any[]>([]);
+  const [IMCId, setIMCId] = useState<number>(0);
+
+  const handleId = useCallback(() => {
+    setIMCId((prevState) => prevState + 1);
+  }, [IMCId]);
 
   const handleIMC = useCallback(() => {
     if (weight >= 30 && weight <= 200 && height >= 1 && height <= 2.2) {
       fadeOut();
+      handleId();
       const totalIMC = Number((weight / (height * height)).toFixed(2));
       setIMCList((arr) => [
         ...arr,
         {
-          date: format(new Date(), 'EEEEEE, d MMM', { locale: ptBR }),
-          id: new Date().getTime(),
+          date: format(new Date(), 'EEEEEE, d MMM', { locale: enUS }),
+          id: IMCId,
           imc: totalIMC,
         },
       ].reverse());
